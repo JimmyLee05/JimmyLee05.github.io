@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    
+    <title>Some algorithms of iOS | Hexo</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="This article to share some common algorithms used in iOS, Let’s take a look for it! ##1.Sorting the following set of data in descending order(Bubble Sort) “23, 16, 84, 12, 8, 54, 75, 44, 4, 62”">
+<meta name="keywords" content="Original,Technology">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Some algorithms of iOS">
+<meta property="og:url" content="http://yoursite.com/2016/07/30/SomeAlgorithmsOfiOS/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="This article to share some common algorithms used in iOS, Let’s take a look for it! ##1.Sorting the following set of data in descending order(Bubble Sort) “23, 16, 84, 12, 8, 54, 75, 44, 4, 62”">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2017-03-06T01:34:11.000Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Some algorithms of iOS">
+<meta name="twitter:description" content="This article to share some common algorithms used in iOS, Let’s take a look for it! ##1.Sorting the following set of data in descending order(Bubble Sort) “23, 16, 84, 12, 8, 54, 75, 44, 4, 62”">
+    
+
+    
+        <link rel="alternate" href="/" title="Hexo" type="application/atom+xml" />
+    
+
+    
+        <link rel="icon" href="/images/favicon.png" />
+    
+
+    <link rel="stylesheet" href="/libs/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/libs/open-sans/styles.css">
+    <link rel="stylesheet" href="/libs/source-code-pro/styles.css">
+
+    <link rel="stylesheet" href="/css/style.css">
+
+    <script src="/libs/jquery/2.1.3/jquery.min.js"></script>
+    
+    
+        <link rel="stylesheet" href="/libs/lightgallery/css/lightgallery.min.css">
+    
+    
+        <link rel="stylesheet" href="/libs/justified-gallery/justifiedGallery.min.css">
+    
+    
+    
+    
+
+
+</head>
+
+<body>
+    <div id="container">
+        <header id="header">
+    <div id="header-main" class="header-inner">
+        <div class="outer">
+            <a href="/" id="logo">
+                <i class="logo"></i>
+                <span class="site-title">Hexo</span>
+            </a>
+            <nav id="main-nav">
+                
+                    <a class="main-nav-link" href="/.">Home</a>
+                
+                    <a class="main-nav-link" href="/archives">Archives</a>
+                
+                    <a class="main-nav-link" href="/categories">Categories</a>
+                
+                    <a class="main-nav-link" href="/tags">Tags</a>
+                
+                    <a class="main-nav-link" href="/about">About</a>
+                
+            </nav>
+            
+                
+                <nav id="sub-nav">
+                    <div class="profile" id="profile-nav">
+                        <a id="profile-anchor" href="javascript:;">
+                            <img class="avatar" src="/css/images/avatar.png" />
+                            <i class="fa fa-caret-down"></i>
+                        </a>
+                    </div>
+                </nav>
+            
+            <div id="search-form-wrap">
+
+    <form class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+        <button type="submit" class="search-form-submit"></button>
+    </form>
+    <div class="ins-search">
+    <div class="ins-search-mask"></div>
+    <div class="ins-search-container">
+        <div class="ins-input-wrapper">
+            <input type="text" class="ins-search-input" placeholder="Type something..." />
+            <span class="ins-close ins-selectable"><i class="fa fa-times-circle"></i></span>
+        </div>
+        <div class="ins-section-wrapper">
+            <div class="ins-section-container"></div>
+        </div>
+    </div>
+</div>
+<script>
+(function (window) {
+    var INSIGHT_CONFIG = {
+        TRANSLATION: {
+            POSTS: 'Entradas',
+            PAGES: 'Pages',
+            CATEGORIES: 'Categorias',
+            TAGS: 'Etiquetas',
+            UNTITLED: '(Untitled)',
+        },
+        ROOT_URL: '/',
+        CONTENT_URL: '/content.json',
+    };
+    window.INSIGHT_CONFIG = INSIGHT_CONFIG;
+})(window);
+</script>
+<script src="/js/insight.js"></script>
+
+</div>
+        </div>
+    </div>
+    <div id="main-nav-mobile" class="header-sub header-inner">
+        <table class="menu outer">
+            <tr>
+                
+                    <td><a class="main-nav-link" href="/.">Home</a></td>
+                
+                    <td><a class="main-nav-link" href="/archives">Archives</a></td>
+                
+                    <td><a class="main-nav-link" href="/categories">Categories</a></td>
+                
+                    <td><a class="main-nav-link" href="/tags">Tags</a></td>
+                
+                    <td><a class="main-nav-link" href="/about">About</a></td>
+                
+                <td>
+                    
+    <div class="search-form">
+        <input type="text" class="ins-search-input search-form-input" placeholder="Buscar" />
+    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</header>
+
+        <div class="outer">
+            
+                
+
+<aside id="profile">
+    <div class="inner profile-inner">
+        <div class="base-info profile-block">
+            <img id="avatar" src="/css/images/avatar.png" />
+            <h2 id="name">JimmyLee</h2>
+            <h3 id="title">iOS Developer &amp; Tester</h3>
+            <span id="location"><i class="fa fa-map-marker"></i>WuXi, China</span>
+            <a id="follow" target="_blank" href="https://github.com/JimmyLee05/">SEGUIR</a>
+        </div>
+        <div class="article-info profile-block">
+            <div class="article-info-block">
+                9
+                <span>Entradas</span>
+            </div>
+            <div class="article-info-block">
+                3
+                <span>Etiquetas</span>
+            </div>
+        </div>
+        
+        <div class="profile-block social-links">
+            <table>
+                <tr>
+                    
+                    
+                    <td>
+                        <a href="https://github.com/JimmyLee05/" target="_blank" title="github" class=tooltip>
+                            <i class="fa fa-github"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="twitter" class=tooltip>
+                            <i class="fa fa-twitter"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="facebook" class=tooltip>
+                            <i class="fa fa-facebook"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="dribbble" class=tooltip>
+                            <i class="fa fa-dribbble"></i>
+                        </a>
+                    </td>
+                    
+                    <td>
+                        <a href="/" target="_blank" title="rss" class=tooltip>
+                            <i class="fa fa-rss"></i>
+                        </a>
+                    </td>
+                    
+                </tr>
+            </table>
+        </div>
+        
+    </div>
+</aside>
+
+            
+            <section id="main"><article id="post-SomeAlgorithmsOfiOS" class="article article-type-post" itemscope itemprop="blogPost">
+    <div class="article-inner">
+        
+        
+            <header class="article-header">
+                
+    
+        <h1 class="article-title" itemprop="name">
+            Some algorithms of iOS
+        </h1>
+    
+
+                
+                    <div class="article-meta">
+                        
+    <div class="article-date">
+        <i class="fa fa-calendar"></i>
+        <a href="/2016/07/30/SomeAlgorithmsOfiOS/">
+            <time datetime="2016-07-30T13:46:25.000Z" itemprop="datePublished">2016-07-30</time>
+        </a>
+    </div>
+
+
+                        
+                        
+    <div class="article-tag">
+        <i class="fa fa-tag"></i>
+        <a class="tag-link" href="/tags/Original/">Original</a>, <a class="tag-link" href="/tags/Technology/">Technology</a>
+    </div>
+
+                    </div>
+                
+            </header>
+        
+        
+        <div class="article-entry" itemprop="articleBody">
+        
+            
+            <p>This article to share some common algorithms used in iOS, Let’s take a look for it!</p>
+<p>##1.Sorting the following set of data in descending order(Bubble Sort) “23, 16, 84, 12, 8, 54, 75, 44, 4, 62”</p>
+<a id="more"></a> 
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line">int main(int argc, char *argv[]) &#123;</span><br><span class="line">	</span><br><span class="line">	int array[10] = &#123;23, 16, 84, 12, 8, 54, 75, 44, 4, 62&#125;;</span><br><span class="line">	int num = sizeof(array)/sizeof(int);</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; num-1; i++) &#123;</span><br><span class="line">		<span class="keyword">for</span> (int j = 0; j &lt; num - 1 -i; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (array[j] &lt; array[j+1]) &#123;</span><br><span class="line">				int tmp = array[j];</span><br><span class="line">				array[j] = array[j+1];</span><br><span class="line">				array[j+1] = tmp;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span> (int i = 0; i &lt; num; i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,array[i]);</span><br><span class="line">		<span class="keyword">if</span>(i == num-1) &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> &#123;</span><br><span class="line">			<span class="built_in">printf</span>(<span class="string">" "</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Bubble sorting is a basic sorting algorithm. This algorithm will repeat the comparison of two adjacent elements in the array, if one element is larger (smaller) than the other, then the position of the two elements is exchanged. This comparison is repeated until the last element, this comparison will repeat n-1 trips, Each trip is compared n-j times, j is the number of elements that have been sorted. Each comparison finds the largest or smallest number of the unsorted elements, this is like a bubble floating from the bottom of the water one by one the same. Bubble sorting is a sorting method with high time complexity and low efficiency, the space complexity is O(n).</p>
+<p>##2.Sorting the following set of data in ascending order(Select Sort). “85, 36, 55, 28, 91, 72, 14, 62, 29, 7”<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">void sort(int a[],int n)</span><br><span class="line">&#123;</span><br><span class="line">	int i, j, index;</span><br><span class="line">	<span class="keyword">for</span> (i=0;i&lt;n-1;i++) &#123;</span><br><span class="line">		index = i;</span><br><span class="line">		<span class="keyword">for</span> (j=i+1; j&lt;n; j++) &#123;</span><br><span class="line">			<span class="keyword">if</span> (a[index]&gt;a[j]) &#123;</span><br><span class="line">				index=j;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(index != i) &#123;</span><br><span class="line">			int temp = a[i];</span><br><span class="line">			a[i] = a[index];</span><br><span class="line">			a[index] = temp;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line">int main(int argc, const char * argv[]) &#123;</span><br><span class="line">	</span><br><span class="line">	int numArr[10] = &#123;85, 36, 55, 28, 91, 72, 14, 62, 29, 7&#125;;</span><br><span class="line">	sort(numArr, 10);</span><br><span class="line">	<span class="keyword">for</span> (int i=0; i &lt; 10; i++) &#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d, "</span>, numArr[i]);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>);</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>##3.Fast sorting algorithm<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">void sort(int *a, int left, int right) &#123;</span><br><span class="line">	<span class="keyword">if</span> (left &gt;= right) &#123;</span><br><span class="line">	<span class="built_in">return</span> ;</span><br><span class="line">&#125;</span><br><span class="line">int i = left;</span><br><span class="line">int j = right;</span><br><span class="line">int key = a[left];</span><br><span class="line"><span class="keyword">while</span> (i &lt; j) &#123;</span><br><span class="line">	<span class="keyword">while</span> (i &lt; j &amp;&amp; key &gt;= a[j]) &#123;</span><br><span class="line">	j --;</span><br><span class="line">&#125;</span><br><span class="line">a[i] = a[j];</span><br><span class="line"><span class="keyword">while</span> (i &lt; j &amp;&amp; key &lt;= a[i]) &#123;</span><br><span class="line">	i++;</span><br><span class="line">&#125;</span><br><span class="line">a[j] =a[i];</span><br><span class="line">&#125;</span><br><span class="line">a[i] = key;</span><br><span class="line">sort(a, left, i-1);</span><br><span class="line">sort(a, i+1, right);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Quick sorting is an improvement in bubble sorting. Use bubble sort once to get the maximum value, if we select a value first, and then scan the sequence waiting to be sorted, a record smaller than this value and a record larger than that value are split into two separate sequences, and then the two sequences are respectively sorted by bubbling, this is quick sorting.</p>
+<p>We call the selected value as the hub value, If the hub value is the maximum value in the sequence, then this trip quickly sorted become a bubble sort.</p>
+<p>##4.Dichotomy search<br>The dichotomy search only applies to the sorted sequence. If there is an array V has been arranged in ascending order, there are n = 20 elements in array V. There is an element X in the array V, how to know the location of X in the array V ?</p>
+<p>We can use dichotomy search to solve this question:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">int binsearch(int x, int v[], int n) &#123;</span><br><span class="line">	int low, hight, mid;</span><br><span class="line">	low = 0;</span><br><span class="line">	high = n-1;</span><br><span class="line"><span class="keyword">while</span>(low &lt;= high)&#123;</span><br><span class="line">	mid = (low &lt;= high)/2;</span><br><span class="line">	<span class="keyword">if</span> (x &lt; v[mid])</span><br><span class="line">		high = mid - 1;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span> (x &gt; v[mid])</span><br><span class="line">		low = mid +1;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		<span class="built_in">return</span> mid;</span><br><span class="line"><span class="built_in">print</span> (<span class="string">"mid = %d, low = %d, high = %d\n"</span>, mid, low, high);</span><br><span class="line">&#125;</span><br><span class="line">	<span class="built_in">return</span> -1;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>Our idea is simple: The input value x is first compared to the middle element of the array v, if x is less than the middle element, the high value is set to the intermediate element - 1. Similarly, if x is more than the middle element, the low value is set to the middle element + 1. And then between low and high to find</p>
+<p>##5.How to achieve flip-linked list(List in reverse order)?<br>Ideas: Put the second element at the top each time<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#include &lt;stdio.h&gt;</span></span><br><span class="line"><span class="comment">#include &lt;stdlib.h&gt;</span></span><br><span class="line"><span class="built_in">type</span> def struct NODE &#123;</span><br><span class="line">	int num;</span><br><span class="line">&#125;</span><br><span class="line">node *createLinkList (int length) &#123;</span><br><span class="line">	<span class="keyword">if</span> (length &lt;= 0) &#123;</span><br><span class="line">		<span class="built_in">return</span> NULL;</span><br><span class="line">	&#125;</span><br><span class="line">	node *head, *p, *q;</span><br><span class="line">	int number = 1;</span><br><span class="line">	head = (node *)malloc(sezeof(node));</span><br><span class="line">	head -&gt; next = head;</span><br><span class="line">	p = q = head;</span><br><span class="line">	<span class="keyword">while</span> (++number &lt;= length) &#123;</span><br><span class="line">		p = (node *)malloc(sizeof(node));</span><br><span class="line">		p -&gt; num = number;</span><br><span class="line">		p -&gt; next = NULL;</span><br><span class="line">		q -&gt; next = p;</span><br><span class="line">		q = p;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> head;</span><br><span class="line">&#125;</span><br><span class="line">void printLinkList(node *head) &#123;</span><br><span class="line">	<span class="keyword">if</span> (head == NULL) &#123;</span><br><span class="line">	<span class="built_in">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	node *p = head;</span><br><span class="line">	<span class="keyword">while</span> (p) &#123;</span><br><span class="line">		<span class="built_in">print</span>(<span class="string">"%d"</span>, p-&gt;num);</span><br><span class="line">		p = p -&gt; next;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"\n"</span>)</span><br><span class="line">&#125;</span><br><span class="line">node *reverseFunc1(node *head) &#123;</span><br><span class="line">	<span class="keyword">if</span> (head == NULL) &#123;</span><br><span class="line">	<span class="built_in">return</span> head;</span><br><span class="line">	&#125;</span><br><span class="line">	node *p, *q;</span><br><span class="line">	p = head;</span><br><span class="line">	q = NULL;</span><br><span class="line">	<span class="keyword">while</span> (p) &#123;</span><br><span class="line">		node *pNext = p -&gt; next;</span><br><span class="line">		p -&gt; next = q;</span><br><span class="line">		q = p;</span><br><span class="line">		p = pNext;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">return</span> q;</span><br><span class="line">&#125;</span><br><span class="line">int main (int argc, const char * argv[]) &#123;</span><br><span class="line">	node *head = createLinkList(7);</span><br><span class="line">	<span class="keyword">if</span> (head) &#123;</span><br><span class="line">		printLinkList(head);</span><br><span class="line">		node *reHead = reverseFunc1(head);</span><br><span class="line">		printLinkList(reHaed);</span><br><span class="line">	&#125;	free(reHead);</span><br><span class="line">	free(head);</span><br><span class="line">	<span class="built_in">return</span> 0;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+
+        
+        </div>
+        <footer class="article-footer">
+            <div class="share-container">
+
+
+
+</div>
+
+    <a data-url="http://yoursite.com/2016/07/30/SomeAlgorithmsOfiOS/" data-id="cjndbowve00056cf5yz0iojri" class="article-share-link"><i class="fa fa-share"></i>Compartir</a>
+<script>
+    (function ($) {
+        // Prevent duplicate binding
+        if (typeof(__SHARE_BUTTON_BINDED__) === 'undefined' || !__SHARE_BUTTON_BINDED__) {
+            __SHARE_BUTTON_BINDED__ = true;
+        } else {
+            return;
+        }
+        $('body').on('click', function() {
+            $('.article-share-box.on').removeClass('on');
+        }).on('click', '.article-share-link', function(e) {
+            e.stopPropagation();
+
+            var $this = $(this),
+                url = $this.attr('data-url'),
+                encodedUrl = encodeURIComponent(url),
+                id = 'article-share-box-' + $this.attr('data-id'),
+                offset = $this.offset(),
+                box;
+
+            if ($('#' + id).length) {
+                box = $('#' + id);
+
+                if (box.hasClass('on')){
+                    box.removeClass('on');
+                    return;
+                }
+            } else {
+                var html = [
+                    '<div id="' + id + '" class="article-share-box">',
+                        '<input class="article-share-input" value="' + url + '">',
+                        '<div class="article-share-links">',
+                            '<a href="https://twitter.com/intent/tweet?url=' + encodedUrl + '" class="fa fa-twitter article-share-twitter" target="_blank" title="Twitter"></a>',
+                            '<a href="https://www.facebook.com/sharer.php?u=' + encodedUrl + '" class="fa fa-facebook article-share-facebook" target="_blank" title="Facebook"></a>',
+                            '<a href="http://pinterest.com/pin/create/button/?url=' + encodedUrl + '" class="fa fa-pinterest article-share-pinterest" target="_blank" title="Pinterest"></a>',
+                            '<a href="https://plus.google.com/share?url=' + encodedUrl + '" class="fa fa-google article-share-google" target="_blank" title="Google+"></a>',
+                        '</div>',
+                    '</div>'
+                ].join('');
+
+              box = $(html);
+
+              $('body').append(box);
+            }
+
+            $('.article-share-box.on').hide();
+
+            box.css({
+                top: offset.top + 25,
+                left: offset.left
+            }).addClass('on');
+
+        }).on('click', '.article-share-box', function (e) {
+            e.stopPropagation();
+        }).on('click', '.article-share-box-input', function () {
+            $(this).select();
+        }).on('click', '.article-share-box-link', function (e) {
+            e.preventDefault();
+            e.stopPropagation();
+
+            window.open(this.href, 'article-share-box-window-' + Date.now(), 'width=500,height=450');
+        });
+    })(jQuery);
+</script>
+
+            
+    
+        <a href="http://yoursite.com/2016/07/30/SomeAlgorithmsOfiOS/#comments" class="article-comment-link disqus-comment-count" data-disqus-url="http://yoursite.com/2016/07/30/SomeAlgorithmsOfiOS/">Comentarios</a>
+    
+
+        </footer>
+    </div>
+    
+        
+<nav id="article-nav">
+    
+        <a href="/2016/08/12/SomefeatureofObjective-C/" id="article-nav-newer" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Más nuevo</strong>
+            <div class="article-nav-title">
+                
+                    Some feature of Objective-C
+                
+            </div>
+        </a>
+    
+    
+        <a href="/2016/07/23/UseJenkinsOnMac/" id="article-nav-older" class="article-nav-link-wrap">
+            <strong class="article-nav-caption">Más viejo</strong>
+            <div class="article-nav-title">Use Jenkins On Mac</div>
+        </a>
+    
+</nav>
+
+
+    
+</article>
+
+
+    
+    <section id="comments">
+    
+        
+    <div id="disqus_thread">
+        <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+    </div>
+
+    
+    </section>
+
+</section>
+            
+                <aside id="sidebar">
+   
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">Recientes</h3>
+        <div class="widget">
+            <ul id="recent-post" class="">
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/08/12/SomefeatureofObjective-C/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.hdwallpapers.net/previews/lofoten-islands-norway-832.jpg)" alt="Some feature of Objective-C" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/08/12/SomefeatureofObjective-C/" class="title">Some feature of Objective-C</a></p>
+                            <p class="item-date"><time datetime="2016-08-12T13:46:25.000Z" itemprop="datePublished">2016-08-12</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/30/SomeAlgorithmsOfiOS/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/30/SomeAlgorithmsOfiOS/" class="title">Some algorithms of iOS</a></p>
+                            <p class="item-date"><time datetime="2016-07-30T13:46:25.000Z" itemprop="datePublished">2016-07-30</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/23/UseJenkinsOnMac/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.hdwallpapers.net/previews/starry-night-over-the-matterhorn-426.jpg)" alt="Use Jenkins On Mac" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/23/UseJenkinsOnMac/" class="title">Use Jenkins On Mac</a></p>
+                            <p class="item-date"><time datetime="2016-07-23T13:46:25.000Z" itemprop="datePublished">2016-07-23</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/17/Tag, push, and pll your image/" class="thumbnail">
+    
+    
+        <span class="thumbnail-image thumbnail-none"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/17/Tag, push, and pll your image/" class="title">Tag push and pull your image</a></p>
+                            <p class="item-date"><time datetime="2016-07-17T06:46:23.000Z" itemprop="datePublished">2016-07-17</time></p>
+                        </div>
+                    </li>
+                
+                    <li>
+                        
+                        <div class="item-thumbnail">
+                            <a href="/2016/07/15/GetStartedWithDocker/" class="thumbnail">
+    
+    
+        <span style="background-image:url(https://www.hdwallpapers.net/previews/starry-night-over-the-desert-762.jpg)" alt="Get Started with Docker" class="thumbnail-image"></span>
+    
+</a>
+
+                        </div>
+                        
+                        <div class="item-inner">
+                            <p class="item-category"></p>
+                            <p class="item-title"><a href="/2016/07/15/GetStartedWithDocker/" class="title">Get Started with Docker</a></p>
+                            <p class="item-date"><time datetime="2016-07-15T03:29:41.000Z" itemprop="datePublished">2016-07-15</time></p>
+                        </div>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">Categorias</h3>
+        <div class="widget">
+            <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/Life/">Life</a><span class="category-list-count">1</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">Archivos</h3>
+        <div class="widget">
+            <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/08/">August 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/07/">July 2016</a><span class="archive-list-count">5</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/06/">June 2016</a><span class="archive-list-count">1</span></li><li class="archive-list-item"><a class="archive-list-link" href="/archives/2016/05/">May 2016</a><span class="archive-list-count">2</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">Etiquetas</h3>
+        <div class="widget">
+            <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Original/">Original</a><span class="tag-list-count">5</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/Technology/">Technology</a><span class="tag-list-count">8</span></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/reprinted/">reprinted</a><span class="tag-list-count">3</span></li></ul>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap">
+        <h3 class="widget-title">Nube de etiquetas</h3>
+        <div class="widget tagcloud">
+            <a href="/tags/Original/" style="font-size: 15px;">Original</a> <a href="/tags/Technology/" style="font-size: 20px;">Technology</a> <a href="/tags/reprinted/" style="font-size: 10px;">reprinted</a>
+        </div>
+    </div>
+
+    
+        
+    <div class="widget-wrap widget-list">
+        <h3 class="widget-title">Links</h3>
+        <div class="widget">
+            <ul>
+                
+                    <li>
+                        <a href="http://hexo.io">Hexo</a>
+                    </li>
+                
+            </ul>
+        </div>
+    </div>
+
+
+    
+    <div id="toTop" class="fa fa-angle-up"></div>
+</aside>
+            
+        </div>
+        <footer id="footer">
+    <div class="outer">
+        <div id="footer-info" class="inner">
+            &copy; 2018 John Doe<br>
+            Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>. Theme by <a href="http://github.com/jimmylee05">Lee</a>
+        </div>
+    </div>
+</footer>
+        
+    
+    <script>
+    var disqus_config = function () {
+        
+            this.page.url = 'http://yoursite.com/2016/07/30/SomeAlgorithmsOfiOS/';
+        
+        this.page.identifier = 'SomeAlgorithmsOfiOS';
+    };
+    (function() { 
+        var d = document, s = d.createElement('script');  
+        s.src = '//' + 'hexo-theme-icarus' + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+
+
+
+    
+        <script src="/libs/lightgallery/js/lightgallery.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-thumbnail.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-pager.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-autoplay.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-fullscreen.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-zoom.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-hash.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-share.min.js"></script>
+        <script src="/libs/lightgallery/js/lg-video.min.js"></script>
+    
+    
+        <script src="/libs/justified-gallery/jquery.justifiedGallery.min.js"></script>
+    
+
+
+
+<!-- Custom Scripts -->
+<script src="/js/main.js"></script>
+
+    </div>
+</body>
+</html>
