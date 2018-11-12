@@ -164,15 +164,59 @@
 <p>We put the above test cases into a test module, it’s a complete unit test.<br>If the unit test can be passed, which means that we tested this function to work properly.If the unit test does not pass, either the function has a bug, or the test condition is not entered correctly, we need fixes it to make unit tests pass.</p>
 <p>What are the benefits of unit testing? Imagine if we modified the abs () source code, we only need to run the unit tests again, if the test passed it means our changes to the abs () function does not affect the original behavior. If the test does not pass, it means that our changes have problems, we need to modify the code or modify the test.</p>
 <p>Next, we actually write code to illustrate the unit test.</p>
-<h2 id="abs-py"><a href="#abs-py" class="headerlink" title="abs.py"></a>abs.py</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">def abs(x):</span><br><span class="line"></span><br><span class="line">true<span class="keyword">if</span> not isinstance(x, (int, <span class="built_in">float</span>)):</span><br><span class="line">truetrueraise TypeError(<span class="string">'bad operand type'</span>)</span><br><span class="line"></span><br><span class="line">true<span class="keyword">if</span> x &gt;= 0:</span><br><span class="line">truetrue<span class="built_in">return</span> x</span><br><span class="line">true<span class="keyword">else</span>:</span><br><span class="line">truetrue<span class="built_in">return</span> -x</span><br></pre></td></tr></table></figure>
-<p>This is a python file, which defines an abs () function that takes an absolute value. </p>
-<p>Open Terminal, cd into the folder where the abs.py file is located. Input python and press Enter to enter python’s interactive programming environment：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> /Users/hisoft/Desktop/Unittest</span><br><span class="line">$ python</span><br><span class="line">Python 2.7.11 (default, Jan 22 2016, 08:29:18) </span><br><span class="line">[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin</span><br><span class="line">Type <span class="string">"help"</span>, <span class="string">"copyright"</span>, <span class="string">"credits"</span> or <span class="string">"license"</span> <span class="keyword">for</span> more information.</span><br><span class="line">&gt;&gt;&gt;</span><br></pre></td></tr></table></figure></p>
-<p>Now imput the ‘import abs’ on the Termanal and press to enters the module name abs there.<br>We use abs.abs (-5) to invoking the function in the module to find the absolute value of -5.<br>This part of the python can refer to the <a href="https://docs.python.org/2.7/tutorial/modules.html" target="_blank" rel="noopener">official documents</a>.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&gt;&gt;&gt; import abs</span><br><span class="line">&gt;&gt;&gt; abs.abs(-5)</span><br><span class="line">5</span><br></pre></td></tr></table></figure></p>
-<h2 id="abs-test-py"><a href="#abs-test-py" class="headerlink" title="abs_test.py"></a>abs_test.py</h2><p>Now let’s write the unit test for the abs function. We use the Python’s unittest module, abs_test.py is like this:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line">import unittest</span><br><span class="line"></span><br><span class="line">from abs import abs</span><br><span class="line"></span><br><span class="line">class UnitTestDemo(unittest.TestCase):</span><br><span class="line"></span><br><span class="line">truedef setup(self):</span><br><span class="line">truetrue<span class="built_in">print</span>(<span class="string">'setUp...'</span>)</span><br><span class="line"></span><br><span class="line">truedef tearDown(self):</span><br><span class="line">truetrue<span class="built_in">print</span> (<span class="string">'tearDoen...'</span>)</span><br><span class="line"></span><br><span class="line">truedef test_case1(self):</span><br><span class="line"></span><br><span class="line">truetrueself.assertEqual(abs(1), 1)</span><br><span class="line">truetrueself.assertEqual(abs(-1), 1)</span><br><span class="line">truetrueself.assertEqual(abs(0), 0)</span><br><span class="line"></span><br><span class="line">truedef test_case2(self):</span><br><span class="line">truetrue</span><br><span class="line">truetruewith self.assertRaises(TypeError):</span><br><span class="line">truetruetrueabs(<span class="string">'1'</span>)</span><br><span class="line">truetruetrue</span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure></p>
-<p>We need to write a test class When we write unit tests, This is inherited from ‘unittest.TestCase’.<br>The test method begins with test, There are test_case1 and test_case2. A method that does not start with test is not considered a test method and will not be executed when tested.</p>
-<p>##Run the unit test<br>Now we can run unit tests. To the end of the abs_test.py with two lines of code：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">    unittest.main()</span><br></pre></td></tr></table></figure></p>
-<p>The two lines of code means that this script has been completed，we can run it directly：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python abs_test.py</span><br></pre></td></tr></table></figure></p>
-<p>There are two methods in the unit test script setUp() and tearDown(), They will invoking before and after each test method execute.</p>
+<h2 id="abs-py"><a href="#abs-py" class="headerlink" title="abs.py"></a>abs.py</h2><pre><code>def abs(x):
+
+    if not isinstance(x, (int, float)):
+    raise TypeError(&apos;bad operand type&apos;)
+
+    if x &gt;= 0:
+        return x
+    else:
+        return -x
+</code></pre><p>This is a python file, which defines an abs () function that takes an absolute value. </p>
+<p>Open Terminal, cd into the folder where the abs.py file is located. Input python and press Enter to enter python’s interactive programming environment：</p>
+<pre><code>$ cd /Users/hisoft/Desktop/Unittest
+$ python
+Python 2.7.11 (default, Jan 22 2016, 08:29:18) 
+[GCC 4.2.1 Compatible Apple LLVM 7.0.2 (clang-700.1.81)] on darwin
+Type &quot;help&quot;, &quot;copyright&quot;, &quot;credits&quot; or &quot;license&quot; for more information.
+</code></pre><p>Now imput the ‘import abs’ on the Termanal and press to enters the module name abs there.<br>We use abs.abs (-5) to invoking the function in the module to find the absolute value of -5.<br>This part of the python can refer to the <a href="https://docs.python.org/2.7/tutorial/modules.html" target="_blank" rel="noopener">official documents</a>.</p>
+<pre><code>&gt;&gt;&gt; import abs
+&gt;&gt;&gt; abs.abs(-5)
+5    
+</code></pre><h2 id="abs-test-py"><a href="#abs-test-py" class="headerlink" title="abs_test.py"></a>abs_test.py</h2><p>Now let’s write the unit test for the abs function. We use the Python’s unittest module, abs_test.py is like this:</p>
+<pre><code>import unittest
+
+from abs import abs
+
+class UnitTestDemo(unittest.TestCase):
+
+    def setup(self):
+        print(&apos;setUp...&apos;)
+
+    def tearDown(self):
+        print (&apos;tearDoen...&apos;)
+
+    def test_case1(self):
+
+        self.assertEqual(abs(1), 1)
+        self.assertEqual(abs(-1), 1)
+        self.assertEqual(abs(0), 0)
+
+    def test_case2(self):
+
+        with self.assertRaises(TypeError):
+            abs(&apos;1&apos;)
+
+if __name__ == &apos;__main__&apos;:
+    unittest.main()
+</code></pre><p>We need to write a test class When we write unit tests, This is inherited from ‘unittest.TestCase’.<br>The test method begins with test, There are test_case1 and test_case2. A method that does not start with test is not considered a test method and will not be executed when tested.</p>
+<p>##Run the unit test<br>Now we can run unit tests. To the end of the abs_test.py with two lines of code：</p>
+<pre><code>if __name__ == &apos;__main__&apos;:
+    unittest.main()
+</code></pre><p>The two lines of code means that this script has been completed，we can run it directly：</p>
+<pre><code>python abs_test.py
+</code></pre><p>There are two methods in the unit test script setUp() and tearDown(), They will invoking before and after each test method execute.</p>
 
                 </div>
             </section>
