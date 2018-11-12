@@ -164,7 +164,7 @@
 </code></pre><p><img src="/images/ROSJava环境搭建/001.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/001.png" data-src="/images/ROSJava环境搭建/001.png"></p>
 <p>2.2 设置keys</p>
 <pre><code>~$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116
-</code></pre><p>[image:442D7EBF-E29B-4922-BEC1-5739EFC56F6E-312-0000101F821F20CF/002.png]</p>
+</code></pre><p><img src="/images/ROSJava环境搭建/002.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/002.png" data-src="/images/ROSJava环境搭建/002.png"></p>
 <p>2.3 安装</p>
 <pre><code>~$ sudo apt-get update
 
@@ -187,9 +187,9 @@
 <pre><code>~$ sudo apt-get install python-rosinstall
 </code></pre><p>2.7 测试roscore</p>
 <pre><code>~$ roscore
-</code></pre><p>[image:278A9397-4C09-45D1-8E8E-A5BAE424692E-312-0000101F8233C942/003.png]</p>
+</code></pre><p><img src="/images/ROSJava环境搭建/003.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/003.png" data-src="/images/ROSJava环境搭建/003.png"></p>
 <p>安装ROS成功后,在Beginner Tutorials中有一个简单的示例程序.</p>
-<p>[image:4987599A-6E58-4EEB-9599-748DDC9BC69B-312-0000101F8249CD7D/屏幕快照 2018-10-17 上午10.14.31.png]</p>
+<p><img src="/images/ROSJava环境搭建/004.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/004.png" data-src="/images/ROSJava环境搭建/004.png"></p>
 <p>在Terminal中运行以下命令： </p>
 <pre><code>$ roscore
 </code></pre><p>新开一个terminal，运行以下命令，打开小乌龟窗口： </p>
@@ -206,19 +206,19 @@
 <p>2.核心功能<br>$ mkdir -p ~/rosjava/src<br>$ wstool init -j4 ~/rosjava/src <a href="https://raw.githubusercontent.com/rosjava/rosjava/kinetic/rosjava.rosinstall" target="_blank" rel="noopener">https://raw.githubusercontent.com/rosjava/rosjava/kinetic/rosjava.rosinstall</a><br>$  source /opt/ros/kinetic/setup.bash<br>$  cd ~/rosjava<br>$  rosdep update<br>$  rosdep install –from-paths src -i -y<br>$  catkin_make</p>
 <p>3.配置 .bashrc文件<br>在.bashrc 文件里设置 Ros的环境变量，不设置的话 ROS和 RosJava Android<br>间的通讯不能连通。</p>
 <p>Linux系统里打开终端，输入命令:<br>$ gedit ~/.bashrc</p>
-<p>[image:12AA48F3-0205-4AA2-97A8-77705AAE06B2-312-0000101F825B9AB3/屏幕快照 2018-10-17 上午11.20.53.png]</p>
+<p><img src="/images/ROSJava环境搭建/005.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/005.png" data-src="/images/ROSJava环境搭建/005.png"></p>
 <p>在最后一行添加三个 export语句<br>export ROS_HOSTNAME=192.168.199.141<br>export ROS_IP=192.168.199.141<br>export ROS_MASTER_URL=<a href="http://192.168.199.141:11311" target="_blank" rel="noopener">http://192.168.199.141:11311</a></p>
 <p>把IP地址改成自己本机连接网络的IP地址，之后手机和安装Linux的ROS系统需要连接在同一个网络</p>
 <p>3.在 Android中使用ROS<br>在Mac上搭建好 Android开发环境，安装好Android Studio，配置好翻墙网络。<br>通过给Android App添加上ROS的依赖库，可以在没有ROS环境的Mac上开发ROS客户端。</p>
 <p>参考资料:<br><a href="http://community.bwbot.org/topic/627/%E5%9C%A8android%E4%B8%AD%E4%BD%BF%E7%94%A8ros" target="_blank" rel="noopener">http://community.bwbot.org/topic/627/%E5%9C%A8android%E4%B8%AD%E4%BD%BF%E7%94%A8ros</a></p>
 <p>1.创建一个 Android App项目</p>
-<p>[image:6D6AE5A1-DDDF-4B3F-B94C-6625A81AE0D2-312-0000101F826AD2C5/001.png]</p>
-<p>[image:E651F761-2085-49A2-9998-59D410729AE6-312-0000101F827B7E83/002.png]</p>
+<p><img src="/images/ROSJava环境搭建/006.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/006.png" data-src="/images/ROSJava环境搭建/006.png"></p>
+<p><img src="/images/ROSJava环境搭建/007.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/007.png" data-src="/images/ROSJava环境搭建/007.png"></p>
 <p>然后点击Finish</p>
 <p>等待项目同步完成。一般这里出问题就是网络没有配置好，需要开翻墙软件。</p>
 <p>2.修改 build.gradle文件</p>
 <p>项目同步完成之后，在项目左侧的文件列表内会有两个build.gradle文件。其中一个是Project的，另一个是Module的。</p>
-<p>[image:70E46C3C-CED6-4C05-A7AA-0ED398102E89-312-0000101F828CF14D/003.png]</p>
+<p><img src="/images/ROSJava环境搭建/008.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/008.png" data-src="/images/ROSJava环境搭建/008.png"></p>
 <p>首先修改Project的build.gradle文件</p>
 <p>把文件中的</p>
 <p>buildscript {<br>    repositories {<br>        jcenter()<br>    }<br>    dependencies {<br>        classpath ‘com.android.tools.build:gradle:2.2.3’</p>
@@ -308,7 +308,7 @@ protected void init(NodeMainExecutor nodeMainExecutor) {
 <p>编译后，在手机上运行App，在运行的ROS的主机上打印/test话题。</p>
 <p>手机要和Linux机器连接在同一个 Wi-Fi下，Linux上已修改 .bashrc文件，添加本机 IP。<br>Android程序中已配置ROS_MASTER_URL 地址。</p>
 <p>在 Linux 上新开一个 Terminal中运行以下命令：<br>$ roscore<br>新开一个terminal，cd 到 rosjava文件夹中，运行命令:<br>$ ros topic echo /test</p>
-<p>[image:BC5FA710-5092-4993-AF32-C5AC96008023-312-0000101F829B7C4C/004.png]</p>
+<p><img src="/images/ROSJava环境搭建/009.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/009.png" data-src="/images/ROSJava环境搭建/009.png"></p>
 <p>可以看到消息已经成功发送出来了。<br>到这Anroid端和Linux端的ROS通讯成功。</p>
 
                 </div>
