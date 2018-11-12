@@ -160,8 +160,8 @@
 <p>资料分享: Ros官网: <a href="http://wiki.ros.org/" target="_blank" rel="noopener">http://wiki.ros.org/</a><br>        RosJava官方文档: <a href="http://wiki.ros.org/rosjava" target="_blank" rel="noopener">http://wiki.ros.org/rosjava</a></p>
 <h2 id="1-ROS环境搭建"><a href="#1-ROS环境搭建" class="headerlink" title="1.ROS环境搭建"></a>1.ROS环境搭建</h2><p>ROS Kinetic支持 Xenial (16.04)和 Wily(15.10)，其它 Linux 系统需要安装其它的 ROS版本。<br>下面开始在 Ubuntu 16.0.4上搭建 ROS Kinetic开发环境。</p>
 <p>参考资料: <a href="http://wiki.ros.org/kinetic" target="_blank" rel="noopener">http://wiki.ros.org/kinetic</a><br>          <a href="http://wiki.ros.org/kinetic/Installation/Ubuntu" target="_blank" rel="noopener">http://wiki.ros.org/kinetic/Installation/Ubuntu</a></p>
-<h3 id="使用下面命令："><a href="#使用下面命令：" class="headerlink" title="使用下面命令："></a>使用下面命令：</h3><figure class="highlight sml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">~$ sudo sh -c <span class="symbol">'echo</span> <span class="string">"deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main"</span> &gt; /etc/apt/sources.<span class="built_in">list</span>.d/ros-latest.list'</span><br></pre></td></tr></table></figure>
-<p><img src="/images/ROSJava环境搭建/001.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/001.png" data-src="/images/ROSJava环境搭建/001.png"></p>
+<h3 id="使用下面命令："><a href="#使用下面命令：" class="headerlink" title="使用下面命令："></a>使用下面命令：</h3><pre><code>~$ sudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&apos;
+</code></pre><p><img src="/images/ROSJava环境搭建/001.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/001.png" data-src="/images/ROSJava环境搭建/001.png"></p>
 <p>2.2 设置keys</p>
 <figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-key adv <span class="params">--keyserver</span> hkp:<span class="string">//ha.pool.sks-keyservers.net</span><span class="function">:80</span> <span class="params">--recv-key</span> 0xB01FA116</span><br></pre></td></tr></table></figure>
 <p>[image:442D7EBF-E29B-4922-BEC1-5739EFC56F6E-312-0000101F821F20CF/002.png]</p>
@@ -221,18 +221,7 @@
 }
 </code></pre><p>}<br>修改为</p>
 <p>buildscript {<br>  apply from: “<a href="https://github.com/rosjava/android_core/raw/kinetic/buildscript.gradle&quot;" target="_blank" rel="noopener">https://github.com/rosjava/android_core/raw/kinetic/buildscript.gradle&quot;</a><br>}<br>然后在文件中添加</p>
-<p>subprojects {<br>    apply plugin: ‘ros-android’</p>
-<pre><code>afterEvaluate { project -&gt;
-    android {
-        // Exclude a few files that are duplicated across our dependencies and
-        // prevent packaging Android applications.
-        packagingOptions {
-            exclude &quot;META-INF/LICENSE.txt&quot;
-            exclude &quot;META-INF/NOTICE.txt&quot;
-        }
-    }
-}
-</code></pre><p>}<br>然后修改Module的build.gradle，在dependencies 中添加ros依赖</p>
+<p>subprojects {<br>    apply plugin: ‘ros-android’<br>Do not place your applica<br>    afterEvaluate { project -&gt;<br>        android {<br>            // Exclude a few files that are duplicated across our dependencies and<br>            // prevent packaging Android applications.<br>            packagingOptions {<br>                exclude “META-INF/LICENSE.txt”<br>                exclude “META-INF/NOTICE.txt”<br>            }<br>        }<br>    }<br>}<br>然后修改Module的build.gradle，在dependencies 中添加ros依赖</p>
 <p>…<br>dependencies {<br>    …<br>    // You now now add any rosjava dependencies, like so:<br>    compile ‘org.ros.android_core:android_10:[0.3,0.4)’<br>}<br>…<br>同时把dependencies 中的 全部implementation修改为compile。注意修改时的大小写。</p>
 <p>把文件中的compileSdkVersion版本设置为25<br>targetSdkVersion也设置为25<br>把 com.android.support:appcompat-v7:27.1.1也修改成25的版本</p>
 <p>最后修改完成的文件如下面所示</p>
