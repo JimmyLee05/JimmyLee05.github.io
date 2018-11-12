@@ -17,7 +17,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>Get Started with Docker | JimmyLee 官网</title>
+	<title>ROSJava环境搭建 | JimmyLee 官网</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -44,14 +44,14 @@
 
 	<meta property="og:site_name" content="JimmyLee 官网">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="Get Started with Docker | JimmyLee 官网">
+	<meta property="og:title" content="ROSJava环境搭建 | JimmyLee 官网">
 	<meta property="og:description" content="">
-	<meta property="og:url" content="http://yoursite.com/2016/07/15/GetStartedWithDocker/">
+	<meta property="og:url" content="http://yoursite.com/2018/11/12/ROSJava环境搭建/">
 
 	
-	<meta property="article:published_time" content="2016-07-15T11:07:00+08:00"> 
+	<meta property="article:published_time" content="2018-11-12T16:11:00+08:00"> 
 	<meta property="article:author" content="">
-	<meta property="article:published_first" content="JimmyLee 官网, /2016/07/15/GetStartedWithDocker/">
+	<meta property="article:published_first" content="JimmyLee 官网, /2018/11/12/ROSJava环境搭建/">
 	
 </head>
 <body class="post-template">
@@ -136,69 +136,185 @@
     <div class="inner">
         <header class="post-full-header">
             <section class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2016-07-15T03:29:41.000Z" itemprop="datePublished">
-                    2016-07-15
+                <time class="post-full-meta-date" datetime="2018-11-12T08:42:25.000Z" itemprop="datePublished">
+                    2018-11-12
                 </time>
                 
                 <span class="date-divider">/</span>
                 
+                <a href="/categories/开发相关/">开发相关</a>&nbsp;&nbsp;
+                
                 
             </section>
-            <h1 class="post-full-title">Get Started with Docker</h1>
+            <h1 class="post-full-title">ROSJava环境搭建</h1>
         </header>
-        <article class="post-full no-image">
+        <article class="post-full ">
+            
+            <figure class="post-full-image" style="background-image: url(https://i.loli.net/2017/11/26/5a19c059c6b49.jpg)">
+            </figure>
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    <p>This is a tutorial for non-technial users who are interested in learning more about Docker. By following these<br>steps, you’ll learn fundamental Docker features while through some simple tasks.</p>
-<p>Depending on how you got here, you may or may not have already downloaded Docker for your platform and installed it.</p>
-<p>##Get Docker?<br>If you haven’t yet downloaded Docker for your platform or installed it, go to <a href="https://docs.docker.com/engine/getstarted/step_one/#step-1-get-docker" target="_blank" rel="noopener">Get Docker</a>.</p>
-<a id="more"></a> 
-<p>##Ready to start working with Docker?<br>If you have already downloaded and installed Docker, you are ready to run Docker commands! Go to <a href="https://docs.docker.com/engine/getstarted/step_one/#step-3-verify-your-installation" target="_blank" rel="noopener">Verify your installation</a>.</p>
-<p>#What you’ll learn and do<br>You will learn how to:</p>
-<p>1.install Docker softwore for your platform<br>2.run a software image in a container<br>3.browse for an image on Docker Hub<br>4.create your own image and run it in a container<br>5.create a Docker Hub account and an image repository<br>6.create an image of your own<br>7.push your image to Docker Hub for others use</p>
-<p>The getting started was user tested to reduce the chance of users having problems. For the best chance of success, follow the steps as written the fiest<br>time before exploring on your own. It takes approximately 45 minutes to complete.</p>
-<p>##Flavors of Docker<br>This tutorial is designed as a getting started with Docker, and works the same whether you are using Docker for Mac, Docker for Windows, Docker for Linux,<br>or Docker ToolBox(for older MAc and Windows systems).</p>
-<p>If you are using Docker Toolbox, you can use the Docker Quickstart Terminal to run Docker commands in a prebackground, and you standard command line terminal is already set up to run Docker commands.</p>
-<p>##How much command line savvy do I nedd?<br>The getting started tour uses Docker Engine CLI commands entered on the command line of a terminal window. You don’t need to be a wizard at the command line, but you should be familiar with how to open your favorite shell or termanal, and run basic commands in that environment. It helps (but isn’t rquired)<br>to konw how to navigate a directory tree, manipilate files, list running process, and so forth.</p>
-<p>##Find and tun the whalesay image<br>People all over the world create Docker images. You can find these images by browsing the Docker Hub. In this next section, you’ll search for and find the<br>image you’ll use in the rest of this getting started.</p>
-<p>#Step 1: Locate the whalesay image<br>1.Open your browser and browse to the Docker Hub.<br>The Docker Hub contains images from individuals like you and official images from organizations like RedHat, IBM, Google, and a whole lot more.</p>
-<p>2.Enter the word ‘whalesay’ in the search bar.</p>
-<p>3.Click on the docker/whalesay image in the results.<br>The browser displays the repository for the shalesay image.</p>
-<p>Each image repository contains information about an image. It should include information such as what kind of softwore the image contains and how to use it. You may notice that the whalesay image is based on l Linux distribution called Ubuntu. In the next step, you run the whalesay image on your machine.</p>
-<p>#step 2: Run the whalesay image<br>Make sure Docker is running. On Docker for Mac and Docker for Windows, this is indicated by the Docker whale showing in the status bar.</p>
-<p>1.Open a command-line terminal</p>
-<p>2.Type the ‘ docker run docker/whalesay/ cowsay boo ‘ command and press RETURN<br>  This command runs the whalesay image in a container. Your terminal should look like the following:<br> <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"> $ docker run docker/whalesay cowsay boo</span><br><span class="line"> Unable to find image <span class="string">'docker/whalesay:latest'</span> locally</span><br><span class="line"> latest: Pulling from docker/whalesay</span><br><span class="line"> e9e06b06e14c: Pull complete</span><br><span class="line"> a82efea989f9: Pull complete</span><br><span class="line"> 37bea4ee0c81: Pull complete</span><br><span class="line"> 07f8e8c5e660: Pull complete</span><br><span class="line"> 676c4a1897e6: Pull complete</span><br><span class="line"> 5b74edbcaa5b: Pull complete</span><br><span class="line"> 1722f41ddcb5: Pull complete</span><br><span class="line"> 99da72cfe067: Pull complete</span><br><span class="line"> 5d5bd9951e26: Pull complete</span><br><span class="line"> fb434121fc77: Already exists</span><br><span class="line"> Digest: sha256:d6ee73f978a366cf97974115abe9c4099ed59c6f75c23d03c64446bb9cd49163</span><br><span class="line"> Status: Downloaded newer image <span class="keyword">for</span> docker/whalesay:latest</span><br><span class="line">  _____</span><br><span class="line"> &lt; boo &gt;</span><br><span class="line">  -----</span><br><span class="line">     \</span><br><span class="line">      \</span><br><span class="line">       \</span><br><span class="line">                     <span class="comment">##        .</span></span><br><span class="line">               <span class="comment">## ## ##       ==</span></span><br><span class="line">            <span class="comment">## ## ## ##      ===</span></span><br><span class="line">        /<span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span>___/ ===</span><br><span class="line">   ~ &#123;~ ~ ~ ~ ~  /  ===- ~~</span><br><span class="line">        \____ o          /</span><br><span class="line">         \    \        __/</span><br><span class="line">           \____\______/</span><br><span class="line"></span><br><span class="line">``` </span><br><span class="line">The first time you run a software image, the docker <span class="built_in">command</span> looks <span class="keyword">for</span> it on your <span class="built_in">local</span> system. If the image isn<span class="string">'t there, then docker gets</span></span><br><span class="line"><span class="string">it from the hub.</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">3.While still in the command line terminal, type docker images command and press RETURN. The command lists all the images on your local system.</span></span><br><span class="line"><span class="string">You should see docker/whalesay in the list.</span></span><br><span class="line"><span class="string">```bash</span></span><br><span class="line"><span class="string">$ docker images</span></span><br><span class="line"><span class="string"> REPOSITORY           TAG         IMAGE ID            CREATED            SIZE</span></span><br><span class="line"><span class="string"> docker/whalesay      latest      fb434121fc77        3 hours ago        247 MB</span></span><br><span class="line"><span class="string"> hello-world          latest      91c95931e552        5 weeks ago        910 B</span></span><br></pre></td></tr></table></figure></p>
-<p> When you run an image in a container, Docker downloads the image to your computer. This local copy of the image saves your time. Docker only<br> downloads the image again if the image’s source changes on the hub. You can, of course, delete the image yourself. You’ll learrn more about<br> that later. Let’s leave the image there for now because we are going to use it later.</p>
-<p> 4.Take a moment to play with the whalesay container a bit.<br> Try running the whalesay image again with a word or phrase. Try a long or short phrase. Can you break the cow?</p>
- <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">$ docker run docker/whalesay cowsay boo-boo</span><br><span class="line"> _________</span><br><span class="line">&lt; boo-boo &gt;</span><br><span class="line"> ---------</span><br><span class="line">    \</span><br><span class="line">     \</span><br><span class="line">      \</span><br><span class="line">                    <span class="comment">##        .</span></span><br><span class="line">              <span class="comment">## ## ##       ==</span></span><br><span class="line">           <span class="comment">## ## ## ##      ===</span></span><br><span class="line">       /<span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span>___/ ===</span><br><span class="line">  ~ &#123;~ ~ ~ ~ ~  /  ===- ~~</span><br><span class="line">       \____ o          /</span><br><span class="line">        \    \        __/</span><br><span class="line">          \____\______/</span><br></pre></td></tr></table></figure>
-<p>##Build your own image<br>The whalesay image could be improved. It could be nice if you didn’t have to think of something to say. And you type a lot of to get whalesay to talk.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run docker/whalesay/ cowsay boo-boo</span><br></pre></td></tr></table></figure></p>
-<p>In this next section, you will improve the whalesay image by building a new version that “talks on its own” and requires fewer words to run.</p>
-<p>#step 1: Write a Dockerfile<br>In this step, you use your favorite text editor to write a short Dockerfile. A Dockerfile describes the software that is “backed” into the image. It isn’t<br>just ingredients thought, it can tell the software what enviroment to use or what commands to run. Your recipe is going to be very short.</p>
-<p>1.Go back to your command terminal window.<br>2.Make a new directory by typing ‘ mkdir mydockerbuild ‘ and pressing RETURN.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ mkdir mydockerbuild</span><br></pre></td></tr></table></figure></p>
-<p>This directory serves as the “context” for your build. The context just means it contains all the things you need to build your image.<br>3.change to your new directory.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> mydockerbuild</span><br></pre></td></tr></table></figure></p>
-<p>Right now the directory is empty.<br>4.Create Dockerfile in the directory by typing ‘touch Dockerfile’ and pressing RETURN.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch Dockerfile</span><br></pre></td></tr></table></figure></p>
-<p>The command appears to do nothing but it actually creates the Dockerfile in the current directory. Just type ‘ls’ to see it.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ls</span><br><span class="line">Dockerfile</span><br></pre></td></tr></table></figure></p>
-<p>5.Open the Dockerfile in a visual text editor like Atom or Submit, or a text based editor like vi, or nano.<br>6.Add a line to the file like this:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">FROM docker/whalesay:lastest</span><br></pre></td></tr></table></figure></p>
-<p>The FROM keyword tells Docker which image your image is based on. Whalesay is cute and has the cowsay problem already, so we’ll start there.<br>7.Now, add the fortunes problems to the image.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">RUN apt-get -y update &amp;&amp; apt-get install -y fortunes</span><br></pre></td></tr></table></figure></p>
-<p>The fortunes program has a command that prints out wise sayings for our whale to say. So the first step is to install it. This line install the<br>software into the image.<br>8.Once the image has the softwore it needs, you instruct the softwore to run when the image is loaded.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">CMD /usr/games/fortune -a | cowsay</span><br></pre></td></tr></table></figure></p>
-<p>This line tells the fortune pogram to pass a nifty quote to the cowsay program.<br>9.Check your work, your file should look like this:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">FROM docker/whalesay:latest</span><br><span class="line">RUN apt-get -y update &amp;&amp; apt-get install -y fortunes</span><br><span class="line">CMD /usr/games/fortune -a | cowsay</span><br></pre></td></tr></table></figure></p>
-<p>10.Save and close your Dockerfile<br>At this point, you have all your softwore ingredients and behaviors described in a Dockerfile. You are ready to build a new image.</p>
-<p>#step 2:Build an image from your Dockerfile<br>1.At the command line, make sure the Dockerfile is in the current directory bu typing cat Dockerfile.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ cat Dockerfile</span><br><span class="line">FROM docker/whalesay:latest</span><br><span class="line"></span><br><span class="line">RUN apt-get -y update &amp;&amp; apt-get install -y fortunes</span><br><span class="line"></span><br><span class="line">CMD /usr/games/fortune -a | cowsay</span><br></pre></td></tr></table></figure>
-<p>2.Now, build your new image by typing the ‘docker build -t docker-whale’ command in your terminal<br>(don’t forget the .period).</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ docker build -t docker-ehale</span><br><span class="line">Sending build context to Docker daemon 2.048 kB</span><br><span class="line">...snip...</span><br><span class="line">Removing intermediate container a8r6faa88df3</span><br><span class="line">successful build 7d9495d03763</span><br></pre></td></tr></table></figure>
-<p>The command takes several seconds to run and reports its outcome. Before you do anything with the new image, take a minute to learn about the DOckerfile build process.</p>
-<p>#step 3:Learn about the build process<br>The docker build -t docker-whale command takes the Dockerfile in the current directory, and builds an image called docker-whale on your local machine. The command takes about a minute and its output looks really long and complex. In this section, you learn what each message means.</p>
-<p>First Docker checks to make sure it has everything it needs to build.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Sending build context to Docker daemon 2.048 kB</span><br></pre></td></tr></table></figure></p>
-<p>Then, Docker loads with the whalesay image. It already has this image locally as you might recall from the last page. So, Docker doesn’t need to download it.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Step 1: From docker/whalesay:latest</span><br><span class="line">  ---&gt; fb434121fc77</span><br></pre></td></tr></table></figure></p>
-<p>Docker moves onto the next step which is to update the apt-get package manager. This takes a lot of lines, no need to list them all again here.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">Step 2: RUN apt-get -y update &amp;&amp; apt-get install -y fortunes</span><br><span class="line"> ---&gt; Running <span class="keyword">in</span> 27d224dfa5b2</span><br><span class="line"> Ign http://archive.ububtu.com trusty InRelease</span><br><span class="line"> Ign http://archive.ubuntu.com trusty-updates InRelease</span><br><span class="line"> Ign http://archive.ubuntu.com trust-security Inrelease</span><br><span class="line"> Hit http://archive.ubuntu.com trusty Release.apg</span><br><span class="line"> ....snip...</span><br><span class="line"> Get:15 http://archive.ubuntu.com trusty-security/restricted amd64 Packegs [14.8 kB]</span><br><span class="line"> Get:16 http://archive.ubuntu.com trusty-security/universe amd64 Packeges [134 kB]</span><br><span class="line"> Reading packegs lists...</span><br><span class="line"> ---&gt; eb06e47a01d2</span><br><span class="line"> Then, Docker install the new fortunes software.</span><br><span class="line"> ```bash</span><br><span class="line"> Reading packegs lists...</span><br><span class="line"> Building dependency tree...</span><br><span class="line"> Reading state information...</span><br><span class="line"> The following extra packegs will be installed:</span><br><span class="line">  fortune-mod fortunes-min librecode0</span><br><span class="line">Suggested packegs:</span><br><span class="line">  x11-utils bsdmainutils</span><br><span class="line">The following NEW packegs will be installed:</span><br><span class="line">  fortune-mod fortunes fortunes-min librecode0</span><br><span class="line">0 upgraded, 4 newly installed, 0 to remove and 3 not upgraded.</span><br><span class="line">Need to get 1961 kB of archives.</span><br><span class="line">After this operation, 4817 kB of additional disk space will be used.</span><br><span class="line">Get:1 http://archive.ubuntu.com/ubuntu/trusty/main librecode0 amd64 3.6-21 [771 kB]</span><br><span class="line">...snip....</span><br><span class="line">Setting up fortunes (1:1.99.1-7)</span><br><span class="line">Processing triggers <span class="keyword">for</span> libc-bin (2.19-0ubuntu6.6)...</span><br><span class="line">  ---&gt; c81071adeeb5</span><br><span class="line">Removing intermediate container 23aa52c1987c</span><br></pre></td></tr></table></figure></p>
-<p>Finally. Docker finishes the build and reports its outcome.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Step 3: CMD /usr/games/fortune -a | cowsay</span><br><span class="line">  ---&gt; Running <span class="keyword">in</span> a8e6faa88df3</span><br><span class="line">  ---&gt; 7d9495d03763</span><br><span class="line">Removing intermediate container a8e6faa88df3</span><br><span class="line">Successfully build 7d9495d03763</span><br></pre></td></tr></table></figure></p>
-<p>#Step 4:Run your new docker-whale<br>In this step, you verify the new images is on your computer and then you run your new image.</p>
-<p>1.Open a command line terminal.<br>2.Type docker images and press RETURN.<br>  This command, you might remember, lists the images you have locally.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ docker images</span><br><span class="line">REPOSITORY            TAG          IMAGE  ID          CREATED            SIZE</span><br><span class="line">docker-whale          latest       7d9495d03763       4 minutes ago      273.7 MB</span><br><span class="line">docker-whalesay       latest       fb434121fc77       4 minutes ago      247 MB</span><br><span class="line">hello-world           latest       91c95931e552       4 minutes ago      910 b</span><br></pre></td></tr></table></figure></p>
-<p>3.Run your new image by typing ‘docker run docker-whale’ and pressing RETURN.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">$ docker run docker-whale</span><br><span class="line">  _________________________________________</span><br><span class="line"> / <span class="string">"He was a modest, good-humored boy. It  \</span></span><br><span class="line"><span class="string"> \ was Oxford that made him insufferable."</span> /</span><br><span class="line">  -----------------------------------------</span><br><span class="line">           \</span><br><span class="line">            \</span><br><span class="line">             \</span><br><span class="line">                           <span class="comment">##        .</span></span><br><span class="line">                     <span class="comment">## ## ##       ==</span></span><br><span class="line">                  <span class="comment">## ## ## ##      ===</span></span><br><span class="line">              /<span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span><span class="string">""</span>___/ ===</span><br><span class="line">         ~ &#123;~ ~ ~ ~ ~  /  ===- ~~</span><br><span class="line">              \____ o          /</span><br><span class="line">               \    \        __/</span><br><span class="line">                 \____\______/</span><br></pre></td></tr></table></figure></p>
-<p>As you can see, you’ve made the whale a lot smarter. It finds its own things to say and the cammand line is a lot shorter! You may also notice that Docker didn’t have to download anything.<br>That is because the image was build locally and is already available.</p>
-<p>#Where to go next<br>On this page, you learned to build an image bu writing yout own Dockerfile. You ran your image in a cotainer. You also just used Linux from your Mac yes again. In the next section, you take the first step in sharing your image by <a href="https://docs.docker.com/engine/getstarted/step_five/" target="_blank" rel="noopener">creating a Docker Hub account</a>.</p>
+                    <p>ROS (Robot Operating System) 是在2010年发布的开源机器人操作系统。</p>
+<p>RosJava 是用 Java实现的 ROS，它提供了一个客户端库用于快速调用 ROS的 Topics, Services 和Parameters，我们可以用它在 Android 上进行 RosJava的开发。</p>
+<p>资料分享: Ros官网: <a href="http://wiki.ros.org/" target="_blank" rel="noopener">http://wiki.ros.org/</a><br>        RosJava官方文档: <a href="http://wiki.ros.org/rosjava" target="_blank" rel="noopener">http://wiki.ros.org/rosjava</a></p>
+<h2 id="1-ROS环境搭建"><a href="#1-ROS环境搭建" class="headerlink" title="1.ROS环境搭建"></a>1.ROS环境搭建</h2><p>ROS Kinetic支持 Xenial (16.04)和 Wily(15.10)，其它 Linux 系统需要安装其它的 ROS版本。<br>下面开始在 Ubuntu 16.0.4上搭建 ROS Kinetic开发环境。</p>
+<p>参考资料: <a href="http://wiki.ros.org/kinetic" target="_blank" rel="noopener">http://wiki.ros.org/kinetic</a><br>          <a href="http://wiki.ros.org/kinetic/Installation/Ubuntu" target="_blank" rel="noopener">http://wiki.ros.org/kinetic/Installation/Ubuntu</a></p>
+<h3 id="使用下面命令："><a href="#使用下面命令：" class="headerlink" title="使用下面命令："></a>使用下面命令：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&apos;</span><br></pre></td></tr></table></figure>
+<p><img src="/images/ROSJava环境搭建/001.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/001.png" data-src="/images/ROSJava环境搭建/001.png"></p>
+<p>2.2 设置keys</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116</span><br></pre></td></tr></table></figure>
+<p>[image:442D7EBF-E29B-4922-BEC1-5739EFC56F6E-312-0000101F821F20CF/002.png]</p>
+<p>2.3 安装</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get update</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install ros-kinetic-desktop-full</span><br></pre></td></tr></table></figure>
+<p>安装功能包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install ros-kinetic-slam-gmapping</span><br></pre></td></tr></table></figure>
+<p>查找在kinetic中可以使用的功能包：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ apt-cache search ros-kinetic</span><br></pre></td></tr></table></figure>
+<p>2.4 初始化<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo rosdep init</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ rosdep update</span><br></pre></td></tr></table></figure>
+<p>2.5 环境配置</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ echo &quot;source /opt/ros/kinetic/setup.bash&quot; &gt;&gt; ~/.bashrc</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ source ~/.bashrc</span><br></pre></td></tr></table></figure>
+<p>注意当安装多个ROS发行版，使用kinetic需要用到下面命令：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ source /opt/ros/kinetic/setup.bash</span><br></pre></td></tr></table></figure>
+<p>2.6 安装rosinstall</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ sudo apt-get install python-rosinstall</span><br></pre></td></tr></table></figure>
+<p>2.7 测试roscore<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">~$ roscore</span><br></pre></td></tr></table></figure></p>
+<p>[image:278A9397-4C09-45D1-8E8E-A5BAE424692E-312-0000101F8233C942/003.png]</p>
+<p>安装ROS成功后,在Beginner Tutorials中有一个简单的示例程序.</p>
+<p>[image:4987599A-6E58-4EEB-9599-748DDC9BC69B-312-0000101F8249CD7D/屏幕快照 2018-10-17 上午10.14.31.png]</p>
+<p>在Terminal中运行以下命令： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ roscore</span><br></pre></td></tr></table></figure>
+<p>新开一个terminal，运行以下命令，打开小乌龟窗口：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun turtlesim turtlesim_node</span><br></pre></td></tr></table></figure></p>
+<p>新开一个terminal，运行以下命令，打开乌龟控制窗口，可使用方向键控制乌龟运动： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun turtlesim turtle_teleop_key</span><br></pre></td></tr></table></figure>
+<p>选中控制窗口，按方向键，可看到小乌龟窗口中乌龟在运动。<br>新开一个terminal，运行以下命令，可以看到ROS的图形化界面，展示结点的关系： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ rosrun rqt_graph rqt_graph</span><br></pre></td></tr></table></figure>
+<p>至此，测试完成，ROS成功</p>
+<p>2.RosJava环境搭建 </p>
+<p>在 Ros环境搭建完成后搭建 RosJava 环境。</p>
+<p>参考资料: <a href="http://wiki.ros.org/rosjava/Tutorials/kinetic/Source%20Installation" target="_blank" rel="noopener">http://wiki.ros.org/rosjava/Tutorials/kinetic/Source%20Installation</a><br>          <a href="https://blog.csdn.net/F_season/article/details/9166133" target="_blank" rel="noopener">https://blog.csdn.net/F_season/article/details/9166133</a></p>
+<p>使用下面命令：<br>1.安装依赖<br>$ sudo apt-get install ros-kinetic-catkin ros-kinetic-rospack python-wstool openjdk-8-jdk</p>
+<p>2.核心功能<br>$ mkdir -p ~/rosjava/src<br>$ wstool init -j4 ~/rosjava/src <a href="https://raw.githubusercontent.com/rosjava/rosjava/kinetic/rosjava.rosinstall" target="_blank" rel="noopener">https://raw.githubusercontent.com/rosjava/rosjava/kinetic/rosjava.rosinstall</a><br>$  source /opt/ros/kinetic/setup.bash<br>$  cd ~/rosjava<br>$  rosdep update<br>$  rosdep install –from-paths src -i -y<br>$  catkin_make</p>
+<p>3.配置 .bashrc文件<br>在.bashrc 文件里设置 Ros的环境变量，不设置的话 ROS和 RosJava Android<br>间的通讯不能连通。</p>
+<p>Linux系统里打开终端，输入命令:<br>$ gedit ~/.bashrc</p>
+<p>[image:12AA48F3-0205-4AA2-97A8-77705AAE06B2-312-0000101F825B9AB3/屏幕快照 2018-10-17 上午11.20.53.png]</p>
+<p>在最后一行添加三个 export语句<br>export ROS_HOSTNAME=192.168.199.141<br>export ROS_IP=192.168.199.141<br>export ROS_MASTER_URL=<a href="http://192.168.199.141:11311" target="_blank" rel="noopener">http://192.168.199.141:11311</a></p>
+<p>把IP地址改成自己本机连接网络的IP地址，之后手机和安装Linux的ROS系统需要连接在同一个网络</p>
+<p>3.在 Android中使用ROS<br>在Mac上搭建好 Android开发环境，安装好Android Studio，配置好翻墙网络。<br>通过给Android App添加上ROS的依赖库，可以在没有ROS环境的Mac上开发ROS客户端。</p>
+<p>参考资料:<br><a href="http://community.bwbot.org/topic/627/%E5%9C%A8android%E4%B8%AD%E4%BD%BF%E7%94%A8ros" target="_blank" rel="noopener">http://community.bwbot.org/topic/627/%E5%9C%A8android%E4%B8%AD%E4%BD%BF%E7%94%A8ros</a></p>
+<p>1.创建一个 Android App项目</p>
+<p>[image:6D6AE5A1-DDDF-4B3F-B94C-6625A81AE0D2-312-0000101F826AD2C5/001.png]</p>
+<p>[image:E651F761-2085-49A2-9998-59D410729AE6-312-0000101F827B7E83/002.png]</p>
+<p>然后点击Finish</p>
+<p>等待项目同步完成。一般这里出问题就是网络没有配置好，需要开翻墙软件。</p>
+<p>2.修改 build.gradle文件</p>
+<p>项目同步完成之后，在项目左侧的文件列表内会有两个build.gradle文件。其中一个是Project的，另一个是Module的。</p>
+<p>[image:70E46C3C-CED6-4C05-A7AA-0ED398102E89-312-0000101F828CF14D/003.png]</p>
+<p>首先修改Project的build.gradle文件</p>
+<p>把文件中的</p>
+<p>buildscript {<br>    repositories {<br>        jcenter()<br>    }<br>    dependencies {<br>        classpath ‘com.android.tools.build:gradle:2.2.3’</p>
+<pre><code>    // NOTE: Do not place your application dependencies here; they belong
+    // in the individual module build.gradle files
+}
+</code></pre><p>}<br>修改为</p>
+<p>buildscript {<br>  apply from: “<a href="https://github.com/rosjava/android_core/raw/kinetic/buildscript.gradle&quot;" target="_blank" rel="noopener">https://github.com/rosjava/android_core/raw/kinetic/buildscript.gradle&quot;</a><br>}<br>然后在文件中添加</p>
+<p>subprojects {<br>    apply plugin: ‘ros-android’</p>
+<pre><code>afterEvaluate { project -&gt;
+    android {
+        // Exclude a few files that are duplicated across our dependencies and
+        // prevent packaging Android applications.
+        packagingOptions {
+            exclude &quot;META-INF/LICENSE.txt&quot;
+            exclude &quot;META-INF/NOTICE.txt&quot;
+        }
+    }
+}
+</code></pre><p>}<br>然后修改Module的build.gradle，在dependencies 中添加ros依赖</p>
+<p>…<br>dependencies {<br>    …<br>    // You now now add any rosjava dependencies, like so:<br>    compile ‘org.ros.android_core:android_10:[0.3,0.4)’<br>}<br>…<br>同时把dependencies 中的 全部implementation修改为compile。注意修改时的大小写。</p>
+<p>把文件中的compileSdkVersion版本设置为25<br>targetSdkVersion也设置为25<br>把 com.android.support:appcompat-v7:27.1.1也修改成25的版本</p>
+<p>最后修改完成的文件如下面所示</p>
+<p>apply plugin: ‘com.android.application’</p>
+<p>android {<br>    compileSdkVersion 25<br>    defaultConfig {<br>        applicationId “org.bwbot.rostest”<br>        minSdkVersion 15<br>        targetSdkVersion 25<br>        versionCode 1<br>        versionName “1.0”<br>        testInstrumentationRunner “android.support.test.runner.AndroidJUnitRunner”<br>    }<br>    buildTypes {<br>        release {<br>            minifyEnabled false<br>            proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’<br>        }<br>    }<br>}</p>
+<p>dependencies {<br>    compile fileTree(dir: ‘libs’, include: [‘*.jar’])<br>    compile ‘com.android.support:appcompat-v7:25.4.0’<br>    compile ‘com.android.support.constraint:constraint-layout:1.1.3’<br>    testCompile ‘junit:junit:4.12’<br>    androidTestCompile ‘com.android.support.test:runner:1.0.2’<br>    androidTestCompile ‘com.android.support.test.espresso:espresso-core:3.0.2’<br>    compile ‘org.ros.android_core:android_10:[0.3,0.4)’<br>}</p>
+<p>3.修改AndroidManifest.xml文件<br>此时如果编译项目会出现下面的错误</p>
+<p>Manifest merger failed : Attribute application@icon value=(@mipmap/ic_launcher) from AndroidManifest.xml:7:9-43<br>    is also present at [org.ros.android_core:android_10:0.3.3] AndroidManifest.xml:19:9-36 value=(@mipmap/icon).<br>    Suggestion: add ‘tools:replace=”android:icon”‘ to <application> element at AndroidManifest.xml:5:5-19:19 to override.<br>此时需要修改AndroidManifest.xml文件在application项目中做如下修改</application></p>
+<p>&lt;application xmlns:tools=”<a href="http://schemas.android.com/tools&quot;" target="_blank" rel="noopener">http://schemas.android.com/tools&quot;</a><br>        tools:replace=”android:icon”<br>        …<br>为了能够正常使用还需要给app添加网络权限。在AndroidManifest.xml文件中添加</p>
+<p><uses-permission android:name="android.permission.INTERNET"><br>最后的AndroidManifest.xml文件如下</uses-permission></p>
+<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
+<p><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.bwbot.rostest"><br>    <uses-permission android:name="android.permission.INTERNET"><br>    <application xmlns:tools="http://schemas.android.com/tools" tools:replace="android:icon" android:allowbackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundicon="@mipmap/ic_launcher_round" android:supportsrtl="true" android:theme="@style/AppTheme"><br>        <activity android:name=".MainActivity"><br>            <intent-filter><br>                <action android:name="android.intent.action.MAIN"></action></intent-filter></activity></application></uses-permission></manifest></p>
+<pre><code>            &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
+        &lt;/intent-filter&gt;
+    &lt;/activity&gt;
+&lt;/application&gt;
+</code></pre><p><br>此时项目已经可以成功编译了。</p>
+<ol start="2">
+<li>写一个简单的消息发布程序<br>MainActivity.java内容如下</li>
+</ol>
+<p>package org.bwbot.rostest;</p>
+<p>import android.support.v7.app.AppCompatActivity;<br>import android.os.Bundle;</p>
+<p>import org.ros.android.RosActivity;<br>import org.ros.concurrent.CancellableLoop;<br>import org.ros.namespace.GraphName;<br>import org.ros.node.ConnectedNode;<br>import org.ros.node.Node;<br>import org.ros.node.NodeConfiguration;<br>import org.ros.node.NodeMain;<br>import org.ros.node.NodeMainExecutor;<br>import org.ros.node.topic.Publisher;</p>
+<p>import java.net.URI;</p>
+<p>import std_msgs.String;</p>
+<p>public class MainActivity extends RosActivity {</p>
+<pre><code>protected MainActivity() {
+    super(&quot;ros_test&quot;, &quot;ros_test&quot;, URI.create(&quot;http://192.168.0.23:11311&quot;)); // 这里是ROS_MASTER_URI
+}
+
+@Override
+protected void onCreate(Bundle savedInstanceState) {
+    super.onCreate(savedInstanceState);
+    setContentView(R.layout.activity_main);
+}
+
+@Override
+protected void init(NodeMainExecutor nodeMainExecutor) {
+    NodeConfiguration nodeConfiguration = NodeConfiguration.newPublic(getRosHostname());
+    nodeConfiguration.setMasterUri(getMasterUri());
+    nodeMainExecutor.execute(new NodeMain() {
+        @Override
+        public GraphName getDefaultNodeName() {
+            return GraphName.of(&quot;ros_test&quot;);
+        }
+
+        @Override
+        public void onStart(ConnectedNode connectedNode) {
+            final Publisher&lt;std_msgs.String&gt; pub =  connectedNode.newPublisher(&quot;/test&quot;, String._TYPE);
+            connectedNode.executeCancellableLoop(new CancellableLoop() {
+                @Override
+                protected void loop() throws InterruptedException {
+                    std_msgs.String msg = pub.newMessage();
+                    msg.setData(&quot;hello world&quot;);
+                    pub.publish(msg);
+                    Thread.sleep(1000);
+                }
+            });
+        }
+
+        @Override
+        public void onShutdown(Node node) {
+
+        }
+
+        @Override
+        public void onShutdownComplete(Node node) {
+
+        }
+
+        @Override
+        public void onError(Node node, Throwable throwable) {
+
+        }
+    }, nodeConfiguration);
+}
+</code></pre><p>}</p>
+<p>编译后，在手机上运行App，在运行的ROS的主机上打印/test话题。</p>
+<p>手机要和Linux机器连接在同一个 Wi-Fi下，Linux上已修改 .bashrc文件，添加本机 IP。<br>Android程序中已配置ROS_MASTER_URL 地址。</p>
+<p>在 Linux 上新开一个 Terminal中运行以下命令：<br>$ roscore<br>新开一个terminal，cd 到 rosjava文件夹中，运行命令:<br>$ ros topic echo /test</p>
+<p>[image:BC5FA710-5092-4993-AF32-C5AC96008023-312-0000101F829B7C4C/004.png]</p>
+<p>可以看到消息已经成功发送出来了。<br>到这Anroid端和Linux端的ROS通讯成功。</p>
 
                 </div>
             </section>
@@ -209,14 +325,10 @@
     <div style="height: 4vw;width: 100%"></div>
     <nav class="pagination">
         
-        <a class="prev-post" title="Tag push and pull your image" href="/2016/07/17/Tag, push, and pll your image/">
-            ← Tag push and pull your image
-        </a>
-        
         <span class="prev-next-post">•</span>
         
-        <a class="next-post" title="Docker for Mac vs. Docker Toolbox" href="/2016/07/13/DockerForMac/">
-            Docker for Mac vs. Docker Toolbox →
+        <a class="next-post" title="Some feature of Objective-C" href="/2016/08/12/SomefeatureofObjective-C/">
+            Some feature of Objective-C →
         </a>
         
     </nav>
@@ -239,7 +351,7 @@
 <div class="toc-main" style="right: -100%">
     <div class="post-toc">
         <span>TOC</span>
-        
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-ROS环境搭建"><span class="toc-text">1.ROS环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用下面命令："><span class="toc-text">使用下面命令：</span></a></li></ol></li></ol>
     </div>
 </div>
 
@@ -400,7 +512,7 @@
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">Get Started with Docker</div>
+    <div class="floating-header-title">ROSJava环境搭建</div>
     <progress class="progress" value="0">
         <div class="progress-container">
             <span class="progress-bar"></span>
