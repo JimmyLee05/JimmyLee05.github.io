@@ -150,12 +150,12 @@
         </header>
         <article class="post-full ">
             
-            <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1542546068979-b6affb46ea8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80)">
+            <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1532615470080-39f17172bc1e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1073&q=80)">
             </figure>
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    <p>代码实战会从零开始，开发一个对图片进行马赛克处理的Web应用。它接收用户上传的目标图片，并据此生成相应的马赛克图片。<br>编程的过程中没有使用第三方库，用的都是Go自带的标准库来完成。可以更好让我们理解Go最基础的一些知识。</p>
+                    <p>代码实战会从零开始，开发一个对图片进行马赛克处理的Web应用。它接收用户上传的目标图片，并据此生成相应的马赛克图片。<br>编程的过程中没有使用第三方库，用的都是Go自带的标准库来完成,可以更好让我们理解Go最基础的一些知识。</p>
 <p>这个Web应用的核心是一个Go语言的马赛克算法，下面是这个算法的构思：</p>
 <p>(1)通过扫描图片目录，并使用图片的文件名作为键，图片的平均颜色作为值，构建出一个由瓷砖图片组成的散列，也就是一个瓷砖图片数据库。通过计算图片中每个像素红、绿、黄3种颜色的总和，并将它们除以像素的总数量，我们就得到了一个三元组，这个三元组就是图片的平均颜色。<br>(2)根据瓷砖图片的大小，将目标图片分割成一系列尺寸更小的子图片。<br>(3)对于目标图片切割出的每张子图片，将它们位于左上方的第一个像素设定为该图片的平均颜色。<br>(4)根据子图片的平均颜色，在瓷砖图片数据库中找到一张平均颜色与之最接近的瓷砖图片，然后在目标图片的相应位置上使用瓷砖图片去代替原有的子图片。为了找到最接近的平均颜色，程序需要将子图片的平均颜色以及瓷砖图片的平均颜色都转换成三维空间中的一个点，并计算这两个点之间的欧几里得距离。<br>(5)当一张瓷砖图片被选中之后，程序就会把这张图片从瓷砖图片数据库中移除，以此来保证马赛克图片中的每张瓷砖图片都是独一无二的。</p>
 <p>mosaic.go文件实现了上面的马赛克算法，可以在Github上看到:</p>
