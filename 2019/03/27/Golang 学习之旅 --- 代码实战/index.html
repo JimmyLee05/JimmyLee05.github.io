@@ -159,6 +159,7 @@
 <p>这个Web应用的核心是一个Go语言的马赛克算法，下面是这个算法的构思：</p>
 <p>(1)通过扫描图片目录，并使用图片的文件名作为键，图片的平均颜色作为值，构建出一个由瓷砖图片组成的散列，也就是一个瓷砖图片数据库。通过计算图片中每个像素红、绿、黄3种颜色的总和，并将它们除以像素的总数量，我们就得到了一个三元组，这个三元组就是图片的平均颜色。<br>(2)根据瓷砖图片的大小，将目标图片分割成一系列尺寸更小的子图片。<br>(3)对于目标图片切割出的每张子图片，将它们位于左上方的第一个像素设定为该图片的平均颜色。<br>(4)根据子图片的平均颜色，在瓷砖图片数据库中找到一张平均颜色与之最接近的瓷砖图片，然后在目标图片的相应位置上使用瓷砖图片去代替原有的子图片。为了找到最接近的平均颜色，程序需要将子图片的平均颜色以及瓷砖图片的平均颜色都转换成三维空间中的一个点，并计算这两个点之间的欧几里得距离。<br>(5)当一张瓷砖图片被选中之后，程序就会把这张图片从瓷砖图片数据库中移除，以此来保证马赛克图片中的每张瓷砖图片都是独一无二的。</p>
 <p>mosaic.go文件实现了上面的马赛克算法，可以在Github上看到:</p>
+<p><a href="https://github.com/JimmyLee05/MosaicGo-Web/blob/master/mosaic.go" target="_blank" rel="noopener">https://github.com/JimmyLee05/MosaicGo-Web/blob/master/mosaic.go</a></p>
 <h3 id="下面是mosaic-go文件里的各个函数"><a href="#下面是mosaic-go文件里的各个函数" class="headerlink" title="下面是mosaic.go文件里的各个函数"></a>下面是mosaic.go文件里的各个函数</h3><p>计算平均颜色的averageColor函数：</p>
 <p><img src="/images/Golang代码实战/001.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/001.png" data-src="/images/Golang代码实战/001.png"></p>
 <p>averageColor函数把给定图片的每个像素中的红、绿、蓝3种颜色相加起来，并将这些颜色的总和除以图片的像素数量，最后把计算的结果纪录在一个新创建的三元组里面(包含3个元素的数组)。</p>
@@ -171,6 +172,7 @@
 <p><img src="/images/Golang代码实战/004.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/004.png" data-src="/images/Golang代码实战/004.png"></p>
 <p>getNearestTile函数会把瓷砖图片数据库中的所有纪录与目标图片的平均颜色一一进行对比，而两者欧几里得距离最短的那一条记录，就是与目标图片平均颜色最为接近的瓷砖图片。</p>
 <h3 id="马赛克Web应用的main文件"><a href="#马赛克Web应用的main文件" class="headerlink" title="马赛克Web应用的main文件"></a>马赛克Web应用的main文件</h3><p>这个文件可以在Github上看到:</p>
+<p><a href="https://github.com/JimmyLee05/MosaicGo-Web/blob/master/main.go" target="_blank" rel="noopener">https://github.com/JimmyLee05/MosaicGo-Web/blob/master/main.go</a></p>
 <p>main函数:</p>
 <p><img src="/images/Golang代码实战/005.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/005.png" data-src="/images/Golang代码实战/005.png"></p>
 <p>func main()是 Go语言程序的默认入口函数，函数主体用 {}括号包裹。<br>main函数只能用于main包中，且只能定义一个。</p>
