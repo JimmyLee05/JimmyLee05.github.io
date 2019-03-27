@@ -17,7 +17,7 @@
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-	<title>RosJava环境搭建 | JimmyLee 官网</title>
+	<title>Golang 学习之旅 --- 代码实战 | JimmyLee 官网</title>
 
 	<meta name="HandheldFriendly" content="True">
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -44,14 +44,14 @@
 
 	<meta property="og:site_name" content="JimmyLee 官网">
 	<meta property="og:type" content="article">
-	<meta property="og:title" content="RosJava环境搭建 | JimmyLee 官网">
+	<meta property="og:title" content="Golang 学习之旅 --- 代码实战 | JimmyLee 官网">
 	<meta property="og:description" content="">
-	<meta property="og:url" content="http://yoursite.com/2018/11/12/ROSJava环境搭建/">
+	<meta property="og:url" content="http://yoursite.com/2019/03/27/Golang 学习之旅 --- 代码实战/">
 
 	
-	<meta property="article:published_time" content="2018-11-12T16:11:00+08:00"> 
+	<meta property="article:published_time" content="2019-03-27T11:03:00+08:00"> 
 	<meta property="article:author" content="">
-	<meta property="article:published_first" content="JimmyLee 官网, /2018/11/12/ROSJava环境搭建/">
+	<meta property="article:published_first" content="JimmyLee 官网, /2019/03/27/Golang 学习之旅 --- 代码实战/">
 	
 </head>
 <body class="post-template">
@@ -136,180 +136,55 @@
     <div class="inner">
         <header class="post-full-header">
             <section class="post-full-meta">
-                <time class="post-full-meta-date" datetime="2018-11-12T08:42:25.000Z" itemprop="datePublished">
-                    2018-11-12
+                <time class="post-full-meta-date" datetime="2019-03-27T03:51:39.000Z" itemprop="datePublished">
+                    2019-03-27
                 </time>
                 
                 <span class="date-divider">/</span>
                 
-                <a href="/categories/开发/">开发</a>&nbsp;&nbsp;
+                <a href="/categories/读书笔记/">读书笔记</a>&nbsp;&nbsp;
                 
                 
             </section>
-            <h1 class="post-full-title">RosJava环境搭建</h1>
+            <h1 class="post-full-title">Golang 学习之旅 --- 代码实战</h1>
         </header>
         <article class="post-full ">
             
-            <figure class="post-full-image" style="background-image: url(https://i.loli.net/2017/11/26/5a19c059c6b49.jpg)">
+            <figure class="post-full-image" style="background-image: url(https://images.unsplash.com/photo-1542546068979-b6affb46ea8f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1234&q=80)">
             </figure>
             
             <section class="post-full-content">
                 <div id="lightgallery" class="markdown-body">
-                    <p>ROS (Robot Operating System) 是在2010年发布的开源机器人操作系统。</p>
-<p>RosJava 是用 Java实现的 ROS，它提供了一个客户端库用于快速调用 ROS的 Topics, Services 和Parameters，我们可以用它在 Android 上进行 RosJava的开发。</p>
-<p>资料分享: Ros官网: <a href="http://wiki.ros.org/" target="_blank" rel="noopener">http://wiki.ros.org/</a><br>        RosJava官方文档: <a href="http://wiki.ros.org/rosjava" target="_blank" rel="noopener">http://wiki.ros.org/rosjava</a></p>
-<h2 id="1-ROS环境搭建"><a href="#1-ROS环境搭建" class="headerlink" title="1.ROS环境搭建"></a>1.ROS环境搭建</h2><p>ROS Kinetic支持 Xenial (16.04)和 Wily(15.10)，其它 Linux 系统需要安装其它的 ROS版本。<br>下面开始在 Ubuntu 16.0.4上搭建 ROS Kinetic开发环境。</p>
-<p>参考资料: <a href="http://wiki.ros.org/kinetic" target="_blank" rel="noopener">http://wiki.ros.org/kinetic</a><br>          <a href="http://wiki.ros.org/kinetic/Installation/Ubuntu" target="_blank" rel="noopener">http://wiki.ros.org/kinetic/Installation/Ubuntu</a></p>
-<h3 id="使用下面命令："><a href="#使用下面命令：" class="headerlink" title="使用下面命令："></a>使用下面命令：</h3><pre><code>~$ sudo sh -c &apos;echo &quot;deb http://packages.ros.org/ros/ubuntu $(lsb_release -sc) main&quot; &gt; /etc/apt/sources.list.d/ros-latest.list&apos;
-</code></pre><p><img src="/images/ROSJava环境搭建/001.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/001.png" data-src="/images/ROSJava环境搭建/001.png"></p>
-<p>2.2 设置keys</p>
-<pre><code>~$ sudo apt-key adv --keyserver hkp://ha.pool.sks-keyservers.net:80 --recv-key 0xB01FA116
-</code></pre><p><img src="/images/ROSJava环境搭建/002.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/002.png" data-src="/images/ROSJava环境搭建/002.png"></p>
-<p>2.3 安装</p>
-<pre><code>~$ sudo apt-get update
-
-~$ sudo apt-get install ros-kinetic-desktop-full
-</code></pre><p>安装功能包：</p>
-<pre><code>~$ sudo apt-get install ros-kinetic-slam-gmapping
-</code></pre><p>查找在kinetic中可以使用的功能包：</p>
-<pre><code>~$ apt-cache search ros-kinetic
-</code></pre><p>2.4 初始化</p>
-<pre><code>~$ sudo rosdep init
-
-~$ rosdep update
-</code></pre><p>2.5 环境配置</p>
-<pre><code>~$ echo &quot;source /opt/ros/kinetic/setup.bash&quot; &gt;&gt; ~/.bashrc
-
-~$ source ~/.bashrc
-</code></pre><p>注意当安装多个ROS发行版，使用kinetic需要用到下面命令：</p>
-<pre><code>~$ source /opt/ros/kinetic/setup.bash
-</code></pre><p>2.6 安装rosinstall</p>
-<pre><code>~$ sudo apt-get install python-rosinstall
-</code></pre><p>2.7 测试roscore</p>
-<pre><code>~$ roscore
-</code></pre><p><img src="/images/ROSJava环境搭建/003.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/003.png" data-src="/images/ROSJava环境搭建/003.png"></p>
-<p>安装ROS成功后,在Beginner Tutorials中有一个简单的示例程序.</p>
-<p><img src="/images/ROSJava环境搭建/004.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/004.png" data-src="/images/ROSJava环境搭建/004.png"></p>
-<p>在Terminal中运行以下命令： </p>
-<pre><code>$ roscore
-</code></pre><p>新开一个terminal，运行以下命令，打开小乌龟窗口： </p>
-<pre><code>$ rosrun turtlesim turtlesim_node
-</code></pre><p>新开一个terminal，运行以下命令，打开乌龟控制窗口，可使用方向键控制乌龟运动： </p>
-<pre><code>$ rosrun turtlesim turtle_teleop_key
-</code></pre><p>选中控制窗口，按方向键，可看到小乌龟窗口中乌龟在运动。<br>新开一个terminal，运行以下命令，可以看到ROS的图形化界面，展示结点的关系： </p>
-<pre><code>$ rosrun rqt_graph rqt_graph
-</code></pre><p>至此，测试完成，ROS成功</p>
-<p>2.RosJava环境搭建 </p>
-<p>在 Ros环境搭建完成后搭建 RosJava 环境。</p>
-<p>参考资料: <a href="http://wiki.ros.org/rosjava/Tutorials/kinetic/Source%20Installation" target="_blank" rel="noopener">http://wiki.ros.org/rosjava/Tutorials/kinetic/Source%20Installation</a><br>          <a href="https://blog.csdn.net/F_season/article/details/9166133" target="_blank" rel="noopener">https://blog.csdn.net/F_season/article/details/9166133</a></p>
-<p>使用下面命令：<br>1.安装依赖<br>$ sudo apt-get install ros-kinetic-catkin ros-kinetic-rospack python-wstool openjdk-8-jdk</p>
-<p>2.核心功能<br>$ mkdir -p ~/rosjava/src<br>$ wstool init -j4 ~/rosjava/src <a href="https://raw.githubusercontent.com/rosjava/rosjava/kinetic/rosjava.rosinstall" target="_blank" rel="noopener">https://raw.githubusercontent.com/rosjava/rosjava/kinetic/rosjava.rosinstall</a><br>$  source /opt/ros/kinetic/setup.bash<br>$  cd ~/rosjava<br>$  rosdep update<br>$  rosdep install –from-paths src -i -y<br>$  catkin_make</p>
-<p>3.配置 .bashrc文件<br>在.bashrc 文件里设置 Ros的环境变量，不设置的话 ROS和 RosJava Android<br>间的通讯不能连通。</p>
-<p>Linux系统里打开终端，输入命令:<br>$ gedit ~/.bashrc</p>
-<p><img src="/images/ROSJava环境搭建/005.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/005.png" data-src="/images/ROSJava环境搭建/005.png"></p>
-<p>在最后一行添加三个 export语句<br>export ROS_HOSTNAME=192.168.199.141<br>export ROS_IP=192.168.199.141<br>export ROS_MASTER_URL=<a href="http://192.168.199.141:11311" target="_blank" rel="noopener">http://192.168.199.141:11311</a></p>
-<p>把IP地址改成自己本机连接网络的IP地址，之后手机和安装Linux的ROS系统需要连接在同一个网络</p>
-<p>3.在 Android中使用ROS<br>在Mac上搭建好 Android开发环境，安装好Android Studio，配置好翻墙网络。<br>通过给Android App添加上ROS的依赖库，可以在没有ROS环境的Mac上开发ROS客户端。</p>
-<p>参考资料:<br><a href="http://community.bwbot.org/topic/627/%E5%9C%A8android%E4%B8%AD%E4%BD%BF%E7%94%A8ros" target="_blank" rel="noopener">http://community.bwbot.org/topic/627/%E5%9C%A8android%E4%B8%AD%E4%BD%BF%E7%94%A8ros</a></p>
-<p>1.创建一个 Android App项目</p>
-<p><img src="/images/ROSJava环境搭建/006.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/006.png" data-src="/images/ROSJava环境搭建/006.png"></p>
-<p><img src="/images/ROSJava环境搭建/007.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/007.png" data-src="/images/ROSJava环境搭建/007.png"></p>
-<p>然后点击Finish</p>
-<p>等待项目同步完成。一般这里出问题就是网络没有配置好，需要开翻墙软件。</p>
-<p>2.修改 build.gradle文件</p>
-<p>项目同步完成之后，在项目左侧的文件列表内会有两个build.gradle文件。其中一个是Project的，另一个是Module的。</p>
-<p><img src="/images/ROSJava环境搭建/008.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/008.png" data-src="/images/ROSJava环境搭建/008.png"></p>
-<p>首先修改Project的build.gradle文件</p>
-<p>把文件中的</p>
-<p>buildscript {<br>    repositories {<br>        jcenter()<br>    }<br>    dependencies {<br>        classpath ‘com.android.tools.build:gradle:2.2.3’</p>
-<pre><code>    // NOTE: Do not place your application dependencies here; they belong
-    // in the individual module build.gradle files
-}
-</code></pre><p>}<br>修改为</p>
-<p>buildscript {<br>  apply from: “<a href="https://github.com/rosjava/android_core/raw/kinetic/buildscript.gradle&quot;" target="_blank" rel="noopener">https://github.com/rosjava/android_core/raw/kinetic/buildscript.gradle&quot;</a><br>}<br>然后在文件中添加</p>
-<p>subprojects {<br>    apply plugin: ‘ros-android’<br>Do not place your applica<br>    afterEvaluate { project -&gt;<br>        android {<br>            // Exclude a few files that are duplicated across our dependencies and<br>            // prevent packaging Android applications.<br>            packagingOptions {<br>                exclude “META-INF/LICENSE.txt”<br>                exclude “META-INF/NOTICE.txt”<br>            }<br>        }<br>    }<br>}<br>然后修改Module的build.gradle，在dependencies 中添加ros依赖</p>
-<p>…<br>dependencies {<br>    …<br>    // You now now add any rosjava dependencies, like so:<br>    compile ‘org.ros.android_core:android_10:[0.3,0.4)’<br>}<br>…<br>同时把dependencies 中的 全部implementation修改为compile。注意修改时的大小写。</p>
-<p>把文件中的compileSdkVersion版本设置为25<br>targetSdkVersion也设置为25<br>把 com.android.support:appcompat-v7:27.1.1也修改成25的版本</p>
-<p>最后修改完成的文件如下面所示</p>
-<p>apply plugin: ‘com.android.application’</p>
-<p>android {<br>    compileSdkVersion 25<br>    defaultConfig {<br>        applicationId “org.bwbot.rostest”<br>        minSdkVersion 15<br>        targetSdkVersion 25<br>        versionCode 1<br>        versionName “1.0”<br>        testInstrumentationRunner “android.support.test.runner.AndroidJUnitRunner”<br>    }<br>    buildTypes {<br>        release {<br>            minifyEnabled false<br>            proguardFiles getDefaultProguardFile(‘proguard-android.txt’), ‘proguard-rules.pro’<br>        }<br>    }<br>}</p>
-<p>dependencies {<br>    compile fileTree(dir: ‘libs’, include: [‘*.jar’])<br>    compile ‘com.android.support:appcompat-v7:25.4.0’<br>    compile ‘com.android.support.constraint:constraint-layout:1.1.3’<br>    testCompile ‘junit:junit:4.12’<br>    androidTestCompile ‘com.android.support.test:runner:1.0.2’<br>    androidTestCompile ‘com.android.support.test.espresso:espresso-core:3.0.2’<br>    compile ‘org.ros.android_core:android_10:[0.3,0.4)’<br>}</p>
-<p>3.修改AndroidManifest.xml文件<br>此时如果编译项目会出现下面的错误</p>
-<p>Manifest merger failed : Attribute application@icon value=(@mipmap/ic_launcher) from AndroidManifest.xml:7:9-43<br>    is also present at [org.ros.android_core:android_10:0.3.3] AndroidManifest.xml:19:9-36 value=(@mipmap/icon).<br>    Suggestion: add ‘tools:replace=”android:icon”‘ to <application> element at AndroidManifest.xml:5:5-19:19 to override.<br>此时需要修改AndroidManifest.xml文件在application项目中做如下修改</application></p>
-<p>&lt;application xmlns:tools=”<a href="http://schemas.android.com/tools&quot;" target="_blank" rel="noopener">http://schemas.android.com/tools&quot;</a><br>        tools:replace=”android:icon”<br>        …<br>为了能够正常使用还需要给app添加网络权限。在AndroidManifest.xml文件中添加</p>
-<p><uses-permission android:name="android.permission.INTERNET"><br>最后的AndroidManifest.xml文件如下</uses-permission></p>
-<p>&lt;?xml version=”1.0” encoding=”utf-8”?&gt;</p>
-<p><manifest xmlns:android="http://schemas.android.com/apk/res/android" package="org.bwbot.rostest"><br>    <uses-permission android:name="android.permission.INTERNET"><br>    <application xmlns:tools="http://schemas.android.com/tools" tools:replace="android:icon" android:allowbackup="true" android:icon="@mipmap/ic_launcher" android:label="@string/app_name" android:roundicon="@mipmap/ic_launcher_round" android:supportsrtl="true" android:theme="@style/AppTheme"><br>        <activity android:name=".MainActivity"><br>            <intent-filter><br>                <action android:name="android.intent.action.MAIN"></action></intent-filter></activity></application></uses-permission></manifest></p>
-<pre><code>            &lt;category android:name=&quot;android.intent.category.LAUNCHER&quot; /&gt;
-        &lt;/intent-filter&gt;
-    &lt;/activity&gt;
-&lt;/application&gt;
-</code></pre><p><br>此时项目已经可以成功编译了。</p>
-<ol start="2">
-<li>写一个简单的消息发布程序<br>MainActivity.java内容如下</li>
-</ol>
-<p>package org.bwbot.rostest;</p>
-<p>import android.support.v7.app.AppCompatActivity;<br>import android.os.Bundle;</p>
-<p>import org.ros.android.RosActivity;<br>import org.ros.concurrent.CancellableLoop;<br>import org.ros.namespace.GraphName;<br>import org.ros.node.ConnectedNode;<br>import org.ros.node.Node;<br>import org.ros.node.NodeConfiguration;<br>import org.ros.node.NodeMain;<br>import org.ros.node.NodeMainExecutor;<br>import org.ros.node.topic.Publisher;</p>
-<p>import java.net.URI;</p>
-<p>import std_msgs.String;</p>
-<p>public class MainActivity extends RosActivity {</p>
-<pre><code>protected MainActivity() {
-    super(&quot;ros_test&quot;, &quot;ros_test&quot;, URI.create(&quot;http://192.168.0.23:11311&quot;)); // 这里是ROS_MASTER_URI
-}
-
-@Override
-protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-    setContentView(R.layout.activity_main);
-}
-
-@Override
-protected void init(NodeMainExecutor nodeMainExecutor) {
-    NodeConfiguration nodeConfiguration = NodeConfiguration.newPublic(getRosHostname());
-    nodeConfiguration.setMasterUri(getMasterUri());
-    nodeMainExecutor.execute(new NodeMain() {
-        @Override
-        public GraphName getDefaultNodeName() {
-            return GraphName.of(&quot;ros_test&quot;);
-        }
-
-        @Override
-        public void onStart(ConnectedNode connectedNode) {
-            final Publisher&lt;std_msgs.String&gt; pub =  connectedNode.newPublisher(&quot;/test&quot;, String._TYPE);
-            connectedNode.executeCancellableLoop(new CancellableLoop() {
-                @Override
-                protected void loop() throws InterruptedException {
-                    std_msgs.String msg = pub.newMessage();
-                    msg.setData(&quot;hello world&quot;);
-                    pub.publish(msg);
-                    Thread.sleep(1000);
-                }
-            });
-        }
-
-        @Override
-        public void onShutdown(Node node) {
-
-        }
-
-        @Override
-        public void onShutdownComplete(Node node) {
-
-        }
-
-        @Override
-        public void onError(Node node, Throwable throwable) {
-
-        }
-    }, nodeConfiguration);
-}
-</code></pre><p>}</p>
-<p>编译后，在手机上运行App，在运行的ROS的主机上打印/test话题。</p>
-<p>手机要和Linux机器连接在同一个 Wi-Fi下，Linux上已修改 .bashrc文件，添加本机 IP。<br>Android程序中已配置ROS_MASTER_URL 地址。</p>
-<p>在 Linux 上新开一个 Terminal中运行以下命令：<br>$ roscore<br>新开一个terminal，cd 到 rosjava文件夹中，运行命令:<br>$ ros topic echo /test</p>
-<p><img src="/images/ROSJava环境搭建/009.png" alt="" class="post-img b-lazy" href="/images/ROSJava环境搭建/009.png" data-src="/images/ROSJava环境搭建/009.png"></p>
-<p>可以看到消息已经成功发送出来了。<br>到这Anroid端和Linux端的ROS通讯成功。</p>
+                    <p>代码实战会从零开始，开发一个对图片进行马赛克处理的Web应用。它接收用户上传的目标图片，并据此生成相应的马赛克图片。<br>编程的过程中没有使用第三方库，用的都是Go自带的标准库来完成。可以更好让我们理解Go最基础的一些知识。</p>
+<p>这个Web应用的核心是一个Go语言的马赛克算法，下面是这个算法的构思：</p>
+<p>(1)通过扫描图片目录，并使用图片的文件名作为键，图片的平均颜色作为值，构建出一个由瓷砖图片组成的散列，也就是一个瓷砖图片数据库。通过计算图片中每个像素红、绿、黄3种颜色的总和，并将它们除以像素的总数量，我们就得到了一个三元组，这个三元组就是图片的平均颜色。<br>(2)根据瓷砖图片的大小，将目标图片分割成一系列尺寸更小的子图片。<br>(3)对于目标图片切割出的每张子图片，将它们位于左上方的第一个像素设定为该图片的平均颜色。<br>(4)根据子图片的平均颜色，在瓷砖图片数据库中找到一张平均颜色与之最接近的瓷砖图片，然后在目标图片的相应位置上使用瓷砖图片去代替原有的子图片。为了找到最接近的平均颜色，程序需要将子图片的平均颜色以及瓷砖图片的平均颜色都转换成三维空间中的一个点，并计算这两个点之间的欧几里得距离。<br>(5)当一张瓷砖图片被选中之后，程序就会把这张图片从瓷砖图片数据库中移除，以此来保证马赛克图片中的每张瓷砖图片都是独一无二的。</p>
+<p>mosaic.go文件实现了上面的马赛克算法，可以在Github上看到:</p>
+<h3 id="下面是mosaic-go文件里的各个函数"><a href="#下面是mosaic-go文件里的各个函数" class="headerlink" title="下面是mosaic.go文件里的各个函数"></a>下面是mosaic.go文件里的各个函数</h3><p>计算平均颜色的averageColor函数：</p>
+<p><img src="/images/Golang代码实战/001.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/001.png" data-src="/images/Golang代码实战/001.png"></p>
+<p>averageColor函数把给定图片的每个像素中的红、绿、蓝3种颜色相加起来，并将这些颜色的总和除以图片的像素数量，最后把计算的结果纪录在一个新创建的三元组里面(包含3个元素的数组)。</p>
+<p>之后是resize函数，把图片缩放至指定的宽度:</p>
+<p><img src="/images/Golang代码实战/002.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/002.png" data-src="/images/Golang代码实战/002.png"></p>
+<p>tilesDB函数，通过扫描瓷砖图片所在目录来创建一个瓷砖图片数据库：</p>
+<p><img src="/images/Golang代码实战/003.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/003.png" data-src="/images/Golang代码实战/003.png"></p>
+<p>瓷砖图片数据库是一个映射，这个映射的键为字符串，而值则为三元组(用包含3个元素的数组来表示)。</p>
+<p>通过 getNearestTile函数寻找与目标图片相匹配的瓷砖图片:</p>
+<p><img src="/images/Golang代码实战/004.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/004.png" data-src="/images/Golang代码实战/004.png"></p>
+<p>getNearestTile函数会把瓷砖图片数据库中的所有纪录与目标图片的平均颜色一一进行对比，而两者欧几里得距离最短的那一条记录，就是与目标图片平均颜色最为接近的瓷砖图片。</p>
+<h3 id="马赛克Web应用的main文件"><a href="#马赛克Web应用的main文件" class="headerlink" title="马赛克Web应用的main文件"></a>马赛克Web应用的main文件</h3><p>这个文件可以在Github上看到:</p>
+<p>main函数:</p>
+<p><img src="/images/Golang代码实战/005.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/005.png" data-src="/images/Golang代码实战/005.png"></p>
+<p>func main()是 Go语言程序的默认入口函数，函数主体用 {}括号包裹。<br>main函数只能用于main包中，且只能定义一个。</p>
+<p>upload函数:</p>
+<p><img src="/images/Golang代码实战/006.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/006.png" data-src="/images/Golang代码实战/006.png"></p>
+<p>mosaic函数:</p>
+<p><img src="/images/Golang代码实战/007.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/007.png" data-src="/images/Golang代码实战/007.png"></p>
+<p>这是并发版的mosaic处理器函数，上传的目标图片被分割成4份来独立处理。在mosaic函数里，程序调用的都是普通函数而不是goroutine,这是因为程序的并发部分存在于被调用函数的内部。cut函数会在内部以goroutine方式执行一个匿名函数，而这个匿名函数则会返回一个通道作为结果。</p>
+<p>cut函数:</p>
+<p><img src="/images/Golang代码实战/008.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/008.png" data-src="/images/Golang代码实战/008.png"></p>
+<p>首先在cut函数里创建一个通道，并启动一个匿名goroutine来计算将要被发送至该通道的马赛克处理结果，接着再把这个通道返回给cut函数的调用者。这样一来，cut函数创建的通道就会立即返回给 mosaic处理器函数，而通道对应的马赛克子图片则会在处理完毕后被发送至通道。</p>
+<p>combine函数：</p>
+<p><img src="/images/Golang代码实战/009.png" alt="" class="post-img b-lazy" href="/images/Golang代码实战/009.png" data-src="/images/Golang代码实战/009.png"></p>
+<p>combine函数接受的输入包含了4个来自cut函数的通道，这些通道包含了马赛克图片的各个组成部分，并且程序不知道这些部分什么时候才会通过通道传输过来。为此程序采用select方法，以先到先服务的方式来接收这些通道发送的消息。</p>
 
                 </div>
             </section>
@@ -320,14 +195,10 @@ protected void init(NodeMainExecutor nodeMainExecutor) {
     <div style="height: 4vw;width: 100%"></div>
     <nav class="pagination">
         
-        <a class="prev-post" title="推荐我在Mac上常用的软件和网站" href="/2018/11/16/推荐我在Mac上常用的软件和网站/">
-            ← 推荐我在Mac上常用的软件和网站
-        </a>
-        
         <span class="prev-next-post">•</span>
         
-        <a class="next-post" title="Some feature of Objective-C" href="/2018/08/12/SomefeatureofObjective-C/">
-            Some feature of Objective-C →
+        <a class="next-post" title="Golang 学习之旅 --- 基础知识" href="/2019/03/25/Golang 学习之旅 --- 基础知识/">
+            Golang 学习之旅 --- 基础知识 →
         </a>
         
     </nav>
@@ -350,7 +221,7 @@ protected void init(NodeMainExecutor nodeMainExecutor) {
 <div class="toc-main" style="right: -100%">
     <div class="post-toc">
         <span>TOC</span>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-ROS环境搭建"><span class="toc-text">1.ROS环境搭建</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用下面命令："><span class="toc-text">使用下面命令：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#下面是mosaic-go文件里的各个函数"><span class="toc-text">下面是mosaic.go文件里的各个函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#马赛克Web应用的main文件"><span class="toc-text">马赛克Web应用的main文件</span></a></li></ol>
     </div>
 </div>
 
@@ -511,7 +382,7 @@ protected void init(NodeMainExecutor nodeMainExecutor) {
         </a>
     </div>
     <span class="floating-header-divider">&mdash;</span>
-    <div class="floating-header-title">RosJava环境搭建</div>
+    <div class="floating-header-title">Golang 学习之旅 --- 代码实战</div>
     <progress class="progress" value="0">
         <div class="progress-container">
             <span class="progress-bar"></span>
